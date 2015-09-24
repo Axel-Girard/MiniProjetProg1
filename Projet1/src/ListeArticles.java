@@ -8,12 +8,14 @@ public class ListeArticles {
 	private ArticleCompareRef compareRef;
 	private ArticleCompareIntitule compareInt;
 	private ArticleComparePrix comparePri;
+
 	private ArrayList<Article> article;
 
 	public ListeArticles(){
 		compareRef = new ArticleCompareRef();
 		compareInt = new ArticleCompareIntitule();
 		comparePri = new ArticleComparePrix();
+	
 		article = new ArrayList<Article>();
 	}
 
@@ -87,11 +89,13 @@ public class ListeArticles {
 
 		return art;
 	}
+
+	// methode de sauvegarde
 	public void sauvegarde(){
 		try {
 			FileWriter fw = new FileWriter("src/sauvegarde.txt");
 			BufferedWriter bw = new BufferedWriter(fw);
-			bw.write(tousLesArticles_ParRef(true),0,tousLesArticles_ParRef(true).size());
+			bw.write(toString(),0,toString().length());
 			bw.close();
 			fw.close();
 		} catch (IOException e) {
@@ -99,7 +103,15 @@ public class ListeArticles {
 			e.printStackTrace();
 		}
 	}
-	
+
+	public String toString(){
+		String str = "";
+		for(int i = 0; i < article.size(); i++){
+			str += article.get(i) + "\n";
+		}
+		return str;
+	}
+
 	//Getter Setter
 	public ArrayList<Article> getArticle() {
 		return article;

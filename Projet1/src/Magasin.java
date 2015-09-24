@@ -21,6 +21,6 @@ public class Magasin {
 		liste.tousLesArticles_ParIntitule(true);
 		liste.tousLesArticles_ParIntitule(false);
 
-		
+		liste.sauvegarde();
 	}
 }
