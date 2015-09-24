@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -83,6 +86,18 @@ public class ListeArticles {
 		}
 
 		return art;
+	}
+	public void sauvegarde(){
+		try {
+			FileWriter fw = new FileWriter("src/sauvegarde.txt");
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(tousLesArticles_ParRef(true),0,tousLesArticles_ParRef(true).size());
+			bw.close();
+			fw.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	//Getter Setter
