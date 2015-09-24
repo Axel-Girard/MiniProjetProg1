@@ -1,10 +1,10 @@
 
-public abstract class Arcticle {
+public abstract class Article {
 	protected int ref;
 	protected String intitule;
 	protected float prix;
 
-	public Arcticle(int ref, String intitule, float prix) {
+	public Article(int ref, String intitule, float prix) {
 		this.ref = ref;
 		this.intitule = intitule;
 		this.prix = prix;
