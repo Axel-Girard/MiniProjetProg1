@@ -1,9 +1,10 @@
-public class Telephone {
+public class Telephone extends Article{
 	private int numero;
 	private Operateur operateur;
 	private Marque marque;
 
-	public Telephone(int numero, Operateur operateur, Marque marque) {
+	public Telephone(int ref, String intitule, float prix, int numero, Operateur operateur, Marque marque) {
+		super(ref, intitule, prix);
 		this.numero = numero;
 		this.operateur = operateur;
 		this.marque = marque;
