@@ -6,6 +6,7 @@ public class Operateur {
 		this.nom = nom;
 	}
 
+	//Getter Setter
 	public String getNom() {
 		return nom;
 	}

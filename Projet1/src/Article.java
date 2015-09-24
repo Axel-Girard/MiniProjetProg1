@@ -10,6 +10,7 @@ public abstract class Article {
 		this.prix = prix;
 	}
 
+	// Getter Setter
 	public int getRef() {
 		return ref;
 	}

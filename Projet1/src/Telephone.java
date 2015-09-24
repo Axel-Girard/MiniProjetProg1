@@ -9,6 +9,7 @@ public class Telephone {
 		this.marque = marque;
 	}
 
+	// Getter Setter
 	public int getNumero() {
 		return numero;
 	}
