@@ -1,8 +1,10 @@
 import java.util.HashSet;
 
-public abstract class Accessoire{
+public abstract class Accessoire extends Article{
 	private HashSet<Marque> marque;
-	public Accessoire(){
+	public Accessoire(int ref, String intitule, float prix){
+		super(ref, intitule, prix);
+		
 		marque = new HashSet<Marque>();
 	}
 

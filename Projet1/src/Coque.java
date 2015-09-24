@@ -10,8 +10,8 @@ public class Coque extends Accessoire {
 		this.couleur = couleur;
 	}
 
-	public Coque(String couleur) {
-		super();
+	public Coque(int ref, String intitule, float prix, String couleur) {
+		super(ref, intitule, prix);
 		this.couleur = couleur;
 	}
 	
