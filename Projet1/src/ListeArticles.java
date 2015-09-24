@@ -10,6 +10,16 @@ public class ListeArticles {
 	}
 
 	//methodes
+
+	// ajoute un article à la liste d'article
+	public void ajouter(Article art){
+		article.add(art);
+	}
+	// supprime un article à la liste d'article
+	public void supprimer(Article art){
+		article.remove(art);
+	}
+
 	// tri selon les références de l'articles
 	public ArrayList<Article> tousLesArticles_ParRef(boolean croissant){
 		ArrayList<Article> art = article;
