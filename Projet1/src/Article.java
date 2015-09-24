@@ -29,5 +29,8 @@ public abstract class Article {
 	public void setPrix(float prix) {
 		this.prix = prix;
 	}
+	public String toString(){
+		return this.ref + " " + this.intitule + " " + this.prix;
+	}
 
 }
