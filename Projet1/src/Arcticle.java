@@ -18,7 +18,7 @@ public abstract class Arcticle {
 	}
 	public String getIntitule() {
 		return intitule;
-	}aqze
+	}
 	public void setIntitule(String intitule) {
 		this.intitule = intitule;
 	}
