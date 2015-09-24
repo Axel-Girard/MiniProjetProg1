@@ -1,21 +1,16 @@
 import java.util.HashSet;
-import java.util.Set;
 
+public abstract class Accessoire{
+	private HashSet<Marque> marque;
+	public Accessoire(){
+		marque = new HashSet<Marque>();
+	}
 
-public abstract class Accessoire {
-	private Set marque;
-
-	public Set getMarque() {
+	public HashSet<Marque> getMarque() {
 		return marque;
 	}
-	public void setMarque(Set marque) {
+
+	public void setMarque(HashSet<Marque> marque) {
 		this.marque = marque;
 	}
-	public Accessoire() {
-		this.marque = new HashSet();
-	}
-	
-	
-	
-
 }
