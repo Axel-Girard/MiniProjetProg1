@@ -1,4 +1,8 @@
 /* commentaire x2 HD Remix of the heart */
 public abstract class Accessoire {
+	public void test(){
+		int bob = 3;
+	}
+	
 
 }
