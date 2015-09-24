@@ -36,7 +36,7 @@ public class ListeArticles {
 			}
 		}
 		else{
-			Collections.reverseOrder();
+			Collections.reverse(art);
 			for(int i = 0; i < art.size(); i++){
 				System.out.println(art.get(i));
 			}
@@ -56,7 +56,7 @@ public class ListeArticles {
 			}
 		}
 		else{
-			Collections.reverseOrder();
+			Collections.reverse(art);
 			for(int i = 0; i < art.size(); i++){
 				System.out.println(art.get(i));
 			}
@@ -76,7 +76,7 @@ public class ListeArticles {
 			}
 		}
 		else{
-			Collections.reverseOrder();
+			Collections.reverse(art);
 			for(int i = 0; i < art.size(); i++){
 				System.out.println(art.get(i));
 			}
