@@ -9,8 +9,8 @@ public class Chargeur extends Accessoire {
 		this.type = type;
 	}
 
-	public Chargeur(Type type) {
-		super();
+	public Chargeur(int ref, String intitule, float prix, Type type) {
+		super(ref, intitule, prix);
 		this.type = type;
 	}
 	

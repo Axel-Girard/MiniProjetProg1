@@ -10,8 +10,8 @@ public class Cordon extends Accessoire {
 		this.taille = taille;
 	}
 
-	public Cordon(float taille) {
-		super();
+	public Cordon(int ref, String intitule, float prix, float taille) {
+		super(ref, intitule, prix);
 		this.taille = taille;
 	}
 	
