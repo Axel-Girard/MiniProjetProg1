@@ -11,7 +11,6 @@ public abstract class Accessoire {
 	public HashSet<Marque> getMarque() {
 		return marque;
 	}
-
 	public void setMarque(HashSet<Marque> marque) {
 		this.marque = marque;
 	}
