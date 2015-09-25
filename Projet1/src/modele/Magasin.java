@@ -1,4 +1,5 @@
 package modele;
+
 import controller.Article;
 import controller.Chargeur;
 import controller.Coque;
@@ -8,14 +9,16 @@ import controller.Type;
 
 
 public class Magasin {
+	private static MenuVendeur vendeur;
 
-	// Classe main
+	// main de l'application
 	public static void main(String[] args) {
 		System.out.println("Welcome in the magasin of the future of demain !");
-		test();
+		vendeur = new MenuVendeur();
 	}
 
-	public static void test(){
+	// methode
+	public static void testBasique(){
 		ListeArticles liste = new ListeArticles();
 		Article a1 = new Coque(001,"coc01",(float)5.4,"Rouge");
 		Article a2 = new Chargeur(002,"cha01",(float)2.3,Type.usb);
@@ -34,5 +37,19 @@ public class Magasin {
 		liste.tousLesArticles_ParIntitule(false);
 
 		liste.sauvegarde();
+	}
+
+	// Accesseur
+	/**
+	 * @return the vendeur
+	 */
+	public static MenuVendeur getVendeur() {
+		return vendeur;
+	}
+	/**
+	 * @param vendeur the vendeur to set
+	 */
+	public static void setVendeur(MenuVendeur vendeur) {
+		Magasin.vendeur = vendeur;
 	}
 }

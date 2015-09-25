@@ -105,6 +105,20 @@ public class ListeArticles {
 		}
 	}
 
+	/**
+	 * Renvoie le total de la liste d'articles
+	 * @return float
+	 */
+	public float totalListe(){
+		float total = 0;
+
+		for(int i = 0; i < article.size(); i++){
+			total += article.get(i).getPrix();
+		}
+
+		return total;
+	}
+
 	public String toString(){
 		String str = "";
 		for(int i = 0; i < article.size(); i++){
