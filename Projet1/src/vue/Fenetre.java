@@ -3,11 +3,8 @@ package vue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class Fenetre extends JFrame{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 4042713508717400450L;
 
 	JPanel panel;
 	PanneauMenu panelMenu;
