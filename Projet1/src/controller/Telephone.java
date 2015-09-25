@@ -1,3 +1,5 @@
+package controller;
+
 public class Telephone extends Article{
 	private int numero;
 	private Operateur operateur;

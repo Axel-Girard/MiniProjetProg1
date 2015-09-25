@@ -1,3 +1,4 @@
+package controller;
 
 public abstract class Article {
 	protected int ref;

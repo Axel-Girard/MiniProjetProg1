@@ -1,3 +1,4 @@
+package controller;
 
 public class Marque {
 	private String nom;

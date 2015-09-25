@@ -1,3 +1,4 @@
+package controller;
 
 public class Operateur {
 	private String nom;

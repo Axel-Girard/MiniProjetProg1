@@ -1,3 +1,5 @@
+package controller;
+
 
 public class Cordon extends Accessoire {
 	private float taille;

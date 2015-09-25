@@ -1,3 +1,4 @@
+package controller;
 
 public enum Type {
 	secteur,

@@ -1,3 +1,4 @@
+package controller;
 import java.util.HashSet;
 
 public abstract class Accessoire extends Article{

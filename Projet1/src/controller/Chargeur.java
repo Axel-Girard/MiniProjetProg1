@@ -1,3 +1,5 @@
+package controller;
+
 public class Chargeur extends Accessoire {
 	private Type type;
 

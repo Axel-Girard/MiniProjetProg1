@@ -1,3 +1,4 @@
+package controller;
 import java.util.Comparator;
 
 public class ArticleCompareRef implements Comparator<Article> {

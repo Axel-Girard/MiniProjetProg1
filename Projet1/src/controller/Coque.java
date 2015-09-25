@@ -1,3 +1,5 @@
+package controller;
+
 
 public class Coque extends Accessoire {
 	private String couleur;
