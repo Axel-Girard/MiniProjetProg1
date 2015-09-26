@@ -1,13 +1,12 @@
 package vue;
 
 import java.awt.CardLayout;
-import java.util.HashMap;
+import java.util.HashSet;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import controller.Client;
-import controller.ListeArticles;
 
 @SuppressWarnings("serial")
 public class Fenetre extends JFrame{
@@ -19,9 +18,9 @@ public class Fenetre extends JFrame{
 
 	private CardLayout cl;
 	private String[] listPanel = {"MenuGeneral", "AjoutClient"};
-	private HashMap<Client, ListeArticles> client;
+	private HashSet<Client> client;
 
-	public Fenetre(HashMap<Client, ListeArticles> client) {
+	public Fenetre(HashSet<Client> client) {
 		this.client = client;
 		panel = new JPanel();
 		panelMenu = new PanneauMenu(this);
@@ -60,14 +59,14 @@ public class Fenetre extends JFrame{
 	/**
 	 * @return the client
 	 */
-	public HashMap<Client, ListeArticles> getClient() {
+	public HashSet<Client> getClient() {
 		return client;
 	}
 
 	/**
 	 * @param client le Client à mettre à jour
 	 */
-	public void setClient(HashMap<Client, ListeArticles> client) {
+	public void setClient(HashSet<Client> client) {
 		this.client = client;
 	}
 }

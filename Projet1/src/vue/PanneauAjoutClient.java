@@ -76,7 +76,7 @@ public class PanneauAjoutClient extends JPanel{
 					System.out.println("nom OK");
 					if(jtfPrenom.getText() != null){
 						System.out.println("prenom OK");
-						fen.getClient().put(new Client(jtfNom.getText(), jtfPrenom.getText()), null);
+						fen.getClient().add(new Client(jtfNom.getText(), jtfPrenom.getText()));
 						fen.menu();
 					}
 				}

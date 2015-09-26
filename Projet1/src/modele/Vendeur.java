@@ -1,30 +1,29 @@
 package modele;
 
-import java.util.HashMap;
+import java.util.HashSet;
 
 import vue.Fenetre;
 import controller.Client;
-import controller.ListeArticles;
 
 public class Vendeur {
-	private HashMap<Client, ListeArticles> client;
+	private HashSet<Client> client;
 
 	public Vendeur(){
-		client = new HashMap<Client, ListeArticles>();
+		client = new HashSet<Client>();
 		Fenetre frame = new Fenetre(client);
 		frame.menu();
 	}
 
 	// Methodes
 	public void ajouterClient(String nom, String prenom){
-		client.put(new Client(nom, prenom), null);
+		client.add(new Client(nom, prenom));
 	}
 
 	//Accesseurs
-	public HashMap<Client, ListeArticles> getClient() {
+	public HashSet<Client> getClient() {
 		return client;
 	}
-	public void setClient(HashMap<Client, ListeArticles> client) {
+	public void setClient(HashSet<Client> client) {
 		this.client = client;
 	}
 }
