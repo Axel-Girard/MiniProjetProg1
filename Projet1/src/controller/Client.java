@@ -14,6 +14,7 @@ public class Client {
 		this.liste = new ListeArticles();
 		this.nom = nom;
 		this.prenom = prenom;
+		System.out.println("Client créer " + nom + " " + prenom);
 	}
 
 	// methodes

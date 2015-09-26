@@ -6,6 +6,8 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -14,9 +16,12 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class PanneauMenu extends JPanel{
 
-	JLabel lbl;
+	private JLabel lbl;
+	private Fenetre fen;
 
-	public PanneauMenu(){
+	public PanneauMenu(Fenetre fen){
+		this.fen = fen;
+
 		this.setBackground(Color.ORANGE);
 
 		this.setVisible(true);
@@ -28,6 +33,8 @@ public class PanneauMenu extends JPanel{
 	 * Affiche le menu de base
 	 */
 	public void menu() {
+		removeAll();
+		System.out.println("Menu G");
 		int largeur = 250;
 		int hauteur = 30;
 
@@ -40,6 +47,12 @@ public class PanneauMenu extends JPanel{
 
 		JButton b1 = new JButton("Ajouter client");
 		b1.setPreferredSize(new Dimension(largeur, hauteur));
+		b1.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){				
+				fen.ajoutClient();
+			}
+		});
+
 		JButton b2 = new JButton("Editer client");
 		b2.setPreferredSize(new Dimension(largeur, hauteur));
 		JButton b3 = new JButton("Supprimer client");

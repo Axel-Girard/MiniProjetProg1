@@ -9,12 +9,12 @@ import controller.Type;
 
 
 public class Magasin {
-	private static MenuVendeur vendeur;
+	private static Vendeur vendeur;
 
 	// main de l'application
 	public static void main(String[] args) {
 		System.out.println("Welcome in the magasin of the future of demain !");
-		vendeur = new MenuVendeur();
+		vendeur = new Vendeur();
 	}
 
 	// methode
@@ -43,13 +43,13 @@ public class Magasin {
 	/**
 	 * @return the vendeur
 	 */
-	public static MenuVendeur getVendeur() {
+	public static Vendeur getVendeur() {
 		return vendeur;
 	}
 	/**
 	 * @param vendeur the vendeur to set
 	 */
-	public static void setVendeur(MenuVendeur vendeur) {
+	public static void setVendeur(Vendeur vendeur) {
 		Magasin.vendeur = vendeur;
 	}
 }
