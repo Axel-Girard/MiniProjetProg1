@@ -67,7 +67,7 @@ public class PanneauAjoutClient extends JPanel{
 				fen.menu();
 			}
 		});
-		JButton btnVldr = new JButton("Créer client");
+		JButton btnVldr = new JButton("Creer client");
 		btnVldr.setPreferredSize(new Dimension(largeur/2, hauteur));
 		btnVldr.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
