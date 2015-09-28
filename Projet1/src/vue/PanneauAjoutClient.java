@@ -51,13 +51,13 @@ public class PanneauAjoutClient extends JPanel{
 		JLabel lblNom = new JLabel("Nom : ");
 		lblNom.setPreferredSize(new Dimension(largeur/3, hauteur));
 		lblNom.setHorizontalAlignment(JLabel.RIGHT);
-		JTextField jtfNom = new JTextField();
+		final JTextField jtfNom = new JTextField();
 		jtfNom.setPreferredSize(new Dimension((largeur/3)*2, hauteur));
 		
 		JLabel lblPrenom = new JLabel("Prenom : ");
 		lblPrenom.setPreferredSize(new Dimension(largeur/3, hauteur));
 		lblPrenom.setHorizontalAlignment(JLabel.RIGHT);
-		JTextField jtfPrenom = new JTextField();
+		final JTextField jtfPrenom = new JTextField();
 		jtfPrenom.setPreferredSize(new Dimension(largeur/3*2, hauteur));
 
 		JButton btnRtr = new JButton("Retour");
@@ -72,6 +72,7 @@ public class PanneauAjoutClient extends JPanel{
 		btnVldr.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
 				System.out.println("Valider");
+				//What de fuck men
 				if(jtfNom.getText() != null){
 					System.out.println("nom OK");
 					if(jtfPrenom.getText() != null){

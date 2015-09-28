@@ -17,7 +17,7 @@ public class Magasin {
 		vendeur = new Vendeur();
 	}
 
-	// methode
+	// methodes
 	public static void testBasique(){
 		ListeArticles liste = new ListeArticles();
 		Article a1 = new Coque(001,"coc01",(float)5.4,"Rouge");
@@ -39,7 +39,7 @@ public class Magasin {
 		liste.sauvegarde();
 	}
 
-	// Accesseur
+	// Accesseurs
 	/**
 	 * @return the vendeur
 	 */
