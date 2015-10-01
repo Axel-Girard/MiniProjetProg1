@@ -11,28 +11,19 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import controller.Client;
-
 @SuppressWarnings("serial")
-public class PanneauEditerClient extends JPanel{
-	private JLabel lbl;
-	private Fenetre fen;
+public class PanneauEditerClient extends Panneau{
 
-	public PanneauEditerClient(Fenetre fen){
-		this.fen = fen;
+	PanneauEditerClient(Fenetre fen){
+		super(fen);
 
 		this.setBackground(Color.RED);
-
-		this.setVisible(true);
-
-		lbl = new JLabel();
 	}
 
 	/**
-	 * Affiche la liste pour selectionner un client
+	 * Affiche une liste pour selectionner un client
 	 */
 	public void menu() {
 		removeAll();
@@ -48,10 +39,13 @@ public class PanneauEditerClient extends JPanel{
 		lbl.setPreferredSize(new Dimension(300, 70));
 
 		JLabel lblNom = new JLabel("Nom : ");
-		lblNom.setPreferredSize(new Dimension(largeur/3, hauteur));
-		lblNom.setHorizontalAlignment(JLabel.RIGHT);
-		final JTextField jtfNom = new JTextField();
-		jtfNom.setPreferredSize(new Dimension((largeur/3)*2, hauteur));
+		//lblNom.setPreferredSize(new Dimension(largeur, hauteur));
+		lblNom.setHorizontalAlignment(JLabel.LEFT);
+
+		for(int i = 0; i < fen.getClient().size(); i++){
+			System.out.println(i);
+			lblNom.setText(lblNom.getText() + "\n" + fen.getClient().get(i).toString());
+		}
 		
 		JLabel lblPrenom = new JLabel("Prenom : ");
 		lblPrenom.setPreferredSize(new Dimension(largeur/3, hauteur));
@@ -66,20 +60,11 @@ public class PanneauEditerClient extends JPanel{
 				fen.menu();
 			}
 		});
-		JButton btnVldr = new JButton("Creer client");
+		JButton btnVldr = new JButton("Editer client");
 		btnVldr.setPreferredSize(new Dimension(largeur/2, hauteur));
 		btnVldr.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
-				System.out.println("Valider");
-				//What de fuck men
-				if(jtfNom.getText() != null){
-					System.out.println("nom OK");
-					if(jtfPrenom.getText() != null){
-						System.out.println("prenom OK");
-						fen.getClient().add(new Client(jtfNom.getText(), jtfPrenom.getText()));
-						fen.menu();
-					}
-				}
+				System.out.println("Editer");
 			}
 		});
 
@@ -102,7 +87,7 @@ public class PanneauEditerClient extends JPanel{
 		this.add(lblNom, gbc);
 
 		gbc.gridx = 1;
-		this.add(jtfNom, gbc);
+		//this.add(jtfNom, gbc);
 		//---------------------------------------------
 		gbc.gridy = 2;
 		gbc.gridx = 0;

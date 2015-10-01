@@ -11,25 +11,17 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import controller.Client;
 
 @SuppressWarnings("serial")
-public class PanneauAjoutClient extends JPanel{
-
-	private JLabel lbl;
-	private Fenetre fen;
+public class PanneauAjoutClient extends Panneau{
 
 	public PanneauAjoutClient(Fenetre fen){
-		this.fen = fen;
+		super(fen);
 
 		this.setBackground(Color.GREEN);
-
-		this.setVisible(true);
-
-		lbl = new JLabel();
 	}
 
 	/**
@@ -72,7 +64,6 @@ public class PanneauAjoutClient extends JPanel{
 		btnVldr.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
 				System.out.println("Valider");
-				//What de fuck men
 				if(jtfNom.getText() != null){
 					System.out.println("nom OK");
 					if(jtfPrenom.getText() != null){

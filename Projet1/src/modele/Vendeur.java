@@ -1,15 +1,15 @@
 package modele;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
 import vue.Fenetre;
 import controller.Client;
 
 public class Vendeur {
-	private HashSet<Client> client;
+	private ArrayList<Client> client;
 
 	public Vendeur(){
-		client = new HashSet<Client>();
+		client = new ArrayList<Client>();
 		Fenetre frame = new Fenetre(client);
 		frame.menu();
 	}
@@ -20,10 +20,10 @@ public class Vendeur {
 	}
 
 	//Accesseurs
-	public HashSet<Client> getClient() {
+	public ArrayList<Client> getClient() {
 		return client;
 	}
-	public void setClient(HashSet<Client> client) {
+	public void setClient(ArrayList<Client> client) {
 		this.client = client;
 	}
 }

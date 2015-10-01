@@ -11,22 +11,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class PanneauMenu extends JPanel{
-
-	private JLabel lbl;
-	private Fenetre fen;
+public class PanneauMenu extends Panneau{
 
 	public PanneauMenu(Fenetre fen){
-		this.fen = fen;
+		super(fen);
 
 		this.setBackground(Color.ORANGE);
-
-		this.setVisible(true);
-
-		lbl = new JLabel();
 	}
 
 	/**
@@ -55,6 +47,12 @@ public class PanneauMenu extends JPanel{
 
 		JButton b2 = new JButton("Editer client");
 		b2.setPreferredSize(new Dimension(largeur, hauteur));
+		b2.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){				
+				fen.editerClient();
+			}
+		});
+	
 		JButton b3 = new JButton("Supprimer client");
 		b3.setPreferredSize(new Dimension(largeur, hauteur));
 		JButton b4 = new JButton("Ajouter article");
@@ -104,6 +102,8 @@ public class PanneauMenu extends JPanel{
 	    //---------------------------------------------
 	    gbc.gridy = 7;
 	    this.add(b7, gbc);
+
+	    
 	}
 
 	/**

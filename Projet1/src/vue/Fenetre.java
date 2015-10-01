@@ -1,7 +1,7 @@
 package vue;
 
 import java.awt.CardLayout;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -19,9 +19,9 @@ public class Fenetre extends JFrame{
 
 	private CardLayout cl;
 	private String[] listPanel = {"MenuGeneral", "AjoutClient", "EditerClient"};
-	private HashSet<Client> client;
+	private ArrayList<Client> client;
 
-	public Fenetre(HashSet<Client> client) {
+	public Fenetre(ArrayList<Client> client) {
 		this.client = client;
 		panel = new JPanel();
 		panelMenu = new PanneauMenu(this);
@@ -41,6 +41,10 @@ public class Fenetre extends JFrame{
 		panel.add(panelMenu, listPanel[0]);
 		panel.add(panelAjtClnt, listPanel[1]);
 		panel.add(panelEdtClnt, listPanel[2]);
+
+		if(client.size() <= 0){
+			
+		}
 	}
 
 	/**
@@ -70,14 +74,14 @@ public class Fenetre extends JFrame{
 	/**
 	 * @return the client
 	 */
-	public HashSet<Client> getClient() {
+	public ArrayList<Client> getClient() {
 		return client;
 	}
 
 	/**
 	 * @param client le Client à mettre à jour
 	 */
-	public void setClient(HashSet<Client> client) {
+	public void setClient(ArrayList<Client> client) {
 		this.client = client;
 	}
 }

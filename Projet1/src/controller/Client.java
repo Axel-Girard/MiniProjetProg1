@@ -61,4 +61,10 @@ public class Client {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
+
+	// toString
+	public String toString() {
+		return nom + ", " + prenom;
+	}
+
 }
