@@ -23,6 +23,9 @@ public class Fenetre extends JFrame{
 
 	public Fenetre(ArrayList<Client> client) {
 		this.client = client;
+
+		client.add(new Client("NOM", "prenom"));		// A SUPPRIMER !!!!!!!!!
+
 		panel = new JPanel();
 		panelMenu = new PanneauMenu(this);
 		panelAjtClnt = new PanneauAjoutClient(this);
@@ -41,10 +44,6 @@ public class Fenetre extends JFrame{
 		panel.add(panelMenu, listPanel[0]);
 		panel.add(panelAjtClnt, listPanel[1]);
 		panel.add(panelEdtClnt, listPanel[2]);
-
-		if(client.size() <= 0){
-			
-		}
 	}
 
 	/**
@@ -83,5 +82,17 @@ public class Fenetre extends JFrame{
 	 */
 	public void setClient(ArrayList<Client> client) {
 		this.client = client;
+	}
+
+	/**
+	 * @return true si un des clients à au moins un article dans son panier
+	 */
+	public boolean isArticle(){
+		for(Client c : client){
+			if(!c.getListe().isEmpty()){
+				return true;
+			}
+		}
+		return false;
 	}
 }

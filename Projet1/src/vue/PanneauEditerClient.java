@@ -8,18 +8,30 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+
+import controller.Client;
 
 @SuppressWarnings("serial")
 public class PanneauEditerClient extends Panneau{
+	private JPanel pan;
+	private ButtonGroup bg;
+	private ArrayList<JRadioButton> jrb;
 
 	PanneauEditerClient(Fenetre fen){
 		super(fen);
 
 		this.setBackground(Color.RED);
+
+		pan = new JPanel();
+		bg = new ButtonGroup();
+		jrb = new ArrayList<JRadioButton>();
 	}
 
 	/**
@@ -38,21 +50,6 @@ public class PanneauEditerClient extends Panneau{
 		lbl.setText("Edition d'un nouveau client");
 		lbl.setPreferredSize(new Dimension(300, 70));
 
-		JLabel lblNom = new JLabel("Nom : ");
-		//lblNom.setPreferredSize(new Dimension(largeur, hauteur));
-		lblNom.setHorizontalAlignment(JLabel.LEFT);
-
-		for(int i = 0; i < fen.getClient().size(); i++){
-			System.out.println(i);
-			lblNom.setText(lblNom.getText() + "\n" + fen.getClient().get(i).toString());
-		}
-		
-		JLabel lblPrenom = new JLabel("Prenom : ");
-		lblPrenom.setPreferredSize(new Dimension(largeur/3, hauteur));
-		lblPrenom.setHorizontalAlignment(JLabel.RIGHT);
-		final JTextField jtfPrenom = new JTextField();
-		jtfPrenom.setPreferredSize(new Dimension(largeur/3*2, hauteur));
-
 		JButton btnRtr = new JButton("Retour");
 		btnRtr.setPreferredSize(new Dimension(largeur/2, hauteur));
 		btnRtr.addActionListener(new ActionListener(){
@@ -64,14 +61,24 @@ public class PanneauEditerClient extends Panneau{
 		btnVldr.setPreferredSize(new Dimension(largeur/2, hauteur));
 		btnVldr.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
-				System.out.println("Editer");
+				System.out.println("Edité");
 			}
 		});
 
 		this.setPreferredSize(new Dimension(340, 490));
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
-	
+
+		miseAJourClient();
+
+		pan.setBackground(Color.CYAN);
+		pan.setPreferredSize(new Dimension(largeur, hauteur*5));
+		for(JRadioButton rb : jrb){
+			rb.setPreferredSize(new Dimension(largeur, hauteur));
+			bg.add(rb);
+			pan.add(rb);
+		}
+
 		//On positionne la case de départ du composant et sa taille
 		gbc.gridx = 0;
 		gbc.gridy = 0;
@@ -82,25 +89,25 @@ public class PanneauEditerClient extends Panneau{
 		this.add(lbl, gbc);
 		//---------------------------------------------
 		gbc.gridy = 1;
-		gbc.gridwidth = 1;
 		gbc.insets.top = 3;
-		this.add(lblNom, gbc);
-
-		gbc.gridx = 1;
-		//this.add(jtfNom, gbc);
+		this.add(pan, gbc);
 		//---------------------------------------------
 		gbc.gridy = 2;
-		gbc.gridx = 0;
-		this.add(lblPrenom, gbc);
-
-		gbc.gridx = 1;
-		this.add(jtfPrenom, gbc);
-		//---------------------------------------------
-		gbc.gridy = 3;
 		gbc.gridx = 0;
 		this.add(btnRtr, gbc);
 
 		gbc.gridx = 1;
 		this.add(btnVldr, gbc);
+	}
+
+	/**
+	 * Met à jour l'interface de selection des clients
+	 */
+	public void miseAJourClient(){
+		jrb = new ArrayList<JRadioButton>();
+		System.out.println("Lapin : " + fen.getClient().size());
+		for(Client c : fen.getClient()){
+			jrb.add(new JRadioButton(c.getNom() + " " + c.getPrenom()));
+		}
 	}
 }

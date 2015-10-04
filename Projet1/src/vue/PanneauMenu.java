@@ -60,9 +60,34 @@ public class PanneauMenu extends Panneau{
 		JButton b5 = new JButton("Supprimer article");
 		b5.setPreferredSize(new Dimension(largeur, hauteur));
 		JButton b6 = new JButton("Sauvegarder et quitter");
+		b5.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){				
+				System.out.println("ok");
+			}
+		});
+
 		b6.setPreferredSize(new Dimension(largeur, hauteur));
 		BouttonQuitter b7 = new BouttonQuitter("Quitter sans sauvegarder");
 		b7.setPreferredSize(new Dimension(largeur, hauteur));
+
+		if(fen.getClient().isEmpty()){
+			b2.setVisible(false);
+			b3.setVisible(false);
+			b4.setVisible(false);
+			b5.setVisible(false);
+			b6.setVisible(false);
+		}
+		else{
+			b2.setVisible(true);
+			b3.setVisible(true);
+			b4.setVisible(true);
+			b6.setVisible(true);
+			if(fen.isArticle()){
+				b5.setVisible(true);
+			}else{
+				b5.setVisible(false);
+			}
+		}
 
 		this.setPreferredSize(new Dimension(340, 490));
 

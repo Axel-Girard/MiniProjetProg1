@@ -22,16 +22,26 @@ public class ListeArticles {
 
 	//methodes
 
-	// ajoute un article à la liste d'article
+	/**
+	 *  ajoute un article à la liste d'article
+	 * @param art l'article à ajouter
+	 */
 	public void ajouter(Article art){
 		article.add(art);
 	}
-	// supprime un article à la liste d'article
+	/**
+	 * supprime un article à la liste d'article
+	 * @param art article à supprimer
+	 */
 	public void supprimer(Article art){
 		article.remove(art);
 	}
 
-	// tri selon les références des articles
+	/**
+	 * tri selon les références des articles
+	 * @param croissant désigne l'ordre croissant ou décroissant de la liste
+	 * @return la liste triée par référence
+	 */
 	public ArrayList<Article> tousLesArticles_ParRef(boolean croissant){
 		ArrayList<Article> art = article;
 
@@ -51,7 +61,11 @@ public class ListeArticles {
 		return art;
 	}
 	
-	// tri selon les intitulé des articles
+	/**
+	 * tri selon les intitulé des articles
+	 * @param croissant désigne l'ordre croissant ou décroissant de la liste
+	 * @return la liste triée par intitulé
+	 */
 	public ArrayList<Article> tousLesArticles_ParIntitule(boolean croissant){
 		ArrayList<Article> art = article;
 
@@ -71,7 +85,11 @@ public class ListeArticles {
 		return art;
 	}
 	
-	// tri selon les prix des articles
+	/**
+	 * tri selon les prix des articles
+	 * @param croissant désigne l'ordre croissant ou décroissant de la liste
+	 * @return la liste triée par prix
+	 */
 	public ArrayList<Article> tousLesArticles_ParPrix(boolean croissant){
 		ArrayList<Article> art = article;
 
@@ -91,7 +109,9 @@ public class ListeArticles {
 		return art;
 	}
 
-	// methode de sauvegarde
+	/**
+	 *  methode de sauvegarde
+	 */
 	public void sauvegarde(){
 		try {
 			FileWriter fw = new FileWriter("src/sauvegarde.txt");
@@ -133,5 +153,8 @@ public class ListeArticles {
 	}
 	public void setArticle(ArrayList<Article> article) {
 		this.article = article;
+	}
+	public boolean isEmpty(){
+		return article.isEmpty();
 	}
 }
