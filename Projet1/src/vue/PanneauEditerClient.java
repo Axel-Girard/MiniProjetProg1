@@ -64,7 +64,16 @@ public class PanneauEditerClient extends Panneau{
 		btnVldr.setPreferredSize(new Dimension(largeur/2, hauteur));
 		btnVldr.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
+				Client c;
 				System.out.println("Edité");
+				int cpt = 0;
+				for(JRadioButton rb : jrb){
+					if(rb.isSelected()){
+						c = fen.getClient().get(cpt);
+						fen.editerClient(c);
+					}
+					cpt++;
+				}
 			}
 		});
 

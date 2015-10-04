@@ -17,63 +17,48 @@ import controller.Client;
 
 @SuppressWarnings("serial")
 public class PanneauAjoutClient extends Panneau{
+	private JLabel lblNom;
+	private final JTextField jtfNom;
+	private JLabel lblPrenom;
+	private final JTextField jtfPrenom;
 
-	public PanneauAjoutClient(Fenetre fen){
-		super(fen);
+	private JButton btnRtr;
+	private JButton btnVldr;
+
+	private Font police;
+
+	public PanneauAjoutClient(Fenetre fenetre){
+		super(fenetre);
 
 		this.setBackground(Color.GREEN);
-	}
 
-	/**
-	 * Affiche le menu de base
-	 */
-	public void menu() {
-		removeAll();
-		System.out.println("Menu AC");
-		int largeur = 250;
-		int hauteur = 30;
-
-		Font police = new Font("Times New Roman", Font.BOLD, 24);
-		lbl.setFont(police);
-		lbl.setHorizontalAlignment(JLabel.CENTER);
-		lbl.setVerticalAlignment(JLabel.CENTER);
-		lbl.setText("Ajout d'un nouveau client");
-		lbl.setPreferredSize(new Dimension(300, 70));
-
-		JLabel lblNom = new JLabel("Nom : ");
+		lblNom = new JLabel("Nom : ");
 		lblNom.setPreferredSize(new Dimension(largeur/3, hauteur));
 		lblNom.setHorizontalAlignment(JLabel.RIGHT);
-		final JTextField jtfNom = new JTextField();
+
+		jtfNom = new JTextField();
 		jtfNom.setPreferredSize(new Dimension((largeur/3)*2, hauteur));
-		
-		JLabel lblPrenom = new JLabel("Prenom : ");
+
+		lblPrenom = new JLabel("Prenom : ");
 		lblPrenom.setPreferredSize(new Dimension(largeur/3, hauteur));
 		lblPrenom.setHorizontalAlignment(JLabel.RIGHT);
-		final JTextField jtfPrenom = new JTextField();
+		
+		jtfPrenom = new JTextField();
 		jtfPrenom.setPreferredSize(new Dimension(largeur/3*2, hauteur));
 
-		JButton btnRtr = new JButton("Retour");
+		btnRtr = new JButton("Retour");
 		btnRtr.setPreferredSize(new Dimension(largeur/2, hauteur));
 		btnRtr.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent event){				
+			public void actionPerformed(ActionEvent event){
+				System.out.println("Valider Edit");
 				fen.menu();
 			}
 		});
-		JButton btnVldr = new JButton("Creer client");
+
+		btnVldr = new JButton("Creer client");
 		btnVldr.setPreferredSize(new Dimension(largeur/2, hauteur));
-		btnVldr.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent event){
-				System.out.println("Valider");
-				if(jtfNom.getText() != null){
-					System.out.println("nom OK");
-					if(jtfPrenom.getText() != null){
-						System.out.println("prenom OK");
-						fen.getClient().add(new Client(jtfNom.getText(), jtfPrenom.getText()));
-						fen.menu();
-					}
-				}
-			}
-		});
+
+		police = new Font("Times New Roman", Font.BOLD, 24);
 
 		this.setPreferredSize(new Dimension(340, 490));
 		this.setLayout(new GridBagLayout());
@@ -112,9 +97,51 @@ public class PanneauAjoutClient extends Panneau{
 	}
 
 	/**
-	 * Dessine un objet graphique à chaque fois que le panneau est affiché
+	 * Affiche le menu de base
 	 */
-	/*public void paintComponent(Graphics g){
-		g.fillOval(20, 20, 75, 75);
-	}*/ 
+	public void menu() {
+		removeAll();
+		System.out.println("Menu AC");
+
+		lbl.setFont(police);
+		lbl.setHorizontalAlignment(JLabel.CENTER);
+		lbl.setVerticalAlignment(JLabel.CENTER);
+		lbl.setText("Ajout d'un nouveau client");
+		lbl.setPreferredSize(new Dimension(300, 70));
+
+		jtfNom.setText("");
+		jtfPrenom.setText("");
+
+		btnVldr.setText("Créer client");
+		btnVldr.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){
+				System.out.println("Valider");
+				if(jtfNom.getText() != null){
+					System.out.println("nom OK");
+					if(jtfPrenom.getText() != null){
+						System.out.println("prenom OK");
+						fen.getClient().add(new Client(jtfNom.getText(), jtfPrenom.getText()));
+						fen.menu();
+					}
+				}
+			}
+		});
+	}
+
+	public void editer(final Client c){
+		System.out.println("Edition C");
+
+		jtfNom.setText(c.getNom());
+		jtfPrenom.setText(c.getPrenom());
+
+		btnVldr.setText("Editer Client");
+		btnVldr.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){
+				System.out.println("Valider Edit");
+				c.setNom(jtfNom.getText());
+				c.setPrenom(jtfPrenom.getText());
+				fen.menu();
+			}
+		});
+	}
 }

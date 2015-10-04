@@ -74,6 +74,15 @@ public class Fenetre extends JFrame{
 	}
 
 	/**
+	 * Edite le client
+	 * @param c Client à éditer
+	 */
+	public void editerClient(Client c){
+		panelAjtClnt.editer(c);
+		cl.show(panel, listPanel[1]);
+	}
+
+	/**
 	 * Afficle le formulaire de suppression de client
 	 */
 	public void supprimerClient(){

@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 public class Panneau extends JPanel{
 	protected JLabel lbl;
 	protected Fenetre fen;
+	protected int largeur = 250;
+	protected int hauteur = 30;
 
 	Panneau(Fenetre fen){
 		this.fen = fen;
