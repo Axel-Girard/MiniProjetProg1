@@ -124,10 +124,10 @@ public class PanneauSupprimerClient extends Panneau{
 	 */
 	public void miseAJourClient(){
 		pan.removeAll();
+		pan.repaint();
 		jcb.clear();
 		for(Client c : fen.getClient()){
 			jcb.add(new JCheckBox(c.getNom() + " " + c.getPrenom()));
 		}
-		pan.repaint();
 	}
 }

@@ -60,8 +60,6 @@ public class PanneauAjoutClient extends Panneau{
 
 		btnVldr = new JButton("Creer client");
 		btnVldr.setPreferredSize(new Dimension(largeur/2, hauteur));
-		//btnVldr.removeActionListener(creer);
-		btnVldr.removeActionListener(editer);
 
 		creer = new ActionListener(){
 			public void actionPerformed(ActionEvent event){
@@ -136,6 +134,7 @@ public class PanneauAjoutClient extends Panneau{
 
 		btnVldr.setText("Créer client");
 		btnVldr.removeActionListener(editer);
+		btnVldr.removeActionListener(creer);
 		btnVldr.addActionListener(creer);
 	}
 
@@ -147,7 +146,7 @@ public class PanneauAjoutClient extends Panneau{
 
 		btnVldr.setText("Editer Client");
 		btnVldr.removeActionListener(creer);
-		//btnVldr.removeActionListener(editer);
+		btnVldr.removeActionListener(editer);
 		editer = new ActionListener(){
 			public void actionPerformed(ActionEvent event){
 				System.out.println("Valider Edit");
