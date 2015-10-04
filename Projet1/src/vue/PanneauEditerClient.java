@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 
 import controller.Client;
 
@@ -23,6 +24,7 @@ public class PanneauEditerClient extends Panneau{
 	private JPanel pan;
 	private ButtonGroup bg;
 	private ArrayList<JRadioButton> jrb;
+	private JScrollPane scroll;
 
 	PanneauEditerClient(Fenetre fen){
 		super(fen);
@@ -32,6 +34,7 @@ public class PanneauEditerClient extends Panneau{
 		pan = new JPanel();
 		bg = new ButtonGroup();
 		jrb = new ArrayList<JRadioButton>();
+		scroll = new JScrollPane(pan);
 	}
 
 	/**
@@ -47,7 +50,7 @@ public class PanneauEditerClient extends Panneau{
 		lbl.setFont(police);
 		lbl.setHorizontalAlignment(JLabel.CENTER);
 		lbl.setVerticalAlignment(JLabel.CENTER);
-		lbl.setText("Edition d'un nouveau client");
+		lbl.setText("Edition d'un client");
 		lbl.setPreferredSize(new Dimension(300, 70));
 
 		JButton btnRtr = new JButton("Retour");
@@ -71,13 +74,17 @@ public class PanneauEditerClient extends Panneau{
 
 		miseAJourClient();
 
-		pan.setBackground(Color.CYAN);
-		pan.setPreferredSize(new Dimension(largeur, hauteur*5));
 		for(JRadioButton rb : jrb){
-			rb.setPreferredSize(new Dimension(largeur, hauteur));
+			rb.setPreferredSize(new Dimension(largeur-30, hauteur));
 			bg.add(rb);
 			pan.add(rb);
 		}
+
+		pan.setBackground(Color.CYAN);
+		pan.setPreferredSize(new Dimension(largeur-20, hauteur*jrb.size()));
+
+		scroll.setBackground(Color.GRAY);
+		scroll.setPreferredSize(new Dimension(largeur, hauteur*5));
 
 		//On positionne la case de départ du composant et sa taille
 		gbc.gridx = 0;
@@ -90,10 +97,11 @@ public class PanneauEditerClient extends Panneau{
 		//---------------------------------------------
 		gbc.gridy = 1;
 		gbc.insets.top = 3;
-		this.add(pan, gbc);
+		this.add(scroll, gbc);
 		//---------------------------------------------
 		gbc.gridy = 2;
 		gbc.gridx = 0;
+		gbc.gridwidth = 1;
 		this.add(btnRtr, gbc);
 
 		gbc.gridx = 1;
@@ -104,8 +112,8 @@ public class PanneauEditerClient extends Panneau{
 	 * Met à jour l'interface de selection des clients
 	 */
 	public void miseAJourClient(){
-		jrb = new ArrayList<JRadioButton>();
-		System.out.println("Lapin : " + fen.getClient().size());
+		pan.removeAll();
+		jrb.clear();
 		for(Client c : fen.getClient()){
 			jrb.add(new JRadioButton(c.getNom() + " " + c.getPrenom()));
 		}

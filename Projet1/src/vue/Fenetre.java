@@ -16,9 +16,10 @@ public class Fenetre extends JFrame{
 	private PanneauMenu panelMenu;
 	private PanneauAjoutClient panelAjtClnt;
 	private PanneauEditerClient panelEdtClnt;
+	private PanneauSupprimerClient panelSuppClnt;
 
 	private CardLayout cl;
-	private String[] listPanel = {"MenuGeneral", "AjoutClient", "EditerClient"};
+	private String[] listPanel = {"MenuGeneral", "AjoutClient", "EditerClient", "SupprimerClient"};
 	private ArrayList<Client> client;
 
 	public Fenetre(ArrayList<Client> client) {
@@ -30,6 +31,7 @@ public class Fenetre extends JFrame{
 		panelMenu = new PanneauMenu(this);
 		panelAjtClnt = new PanneauAjoutClient(this);
 		panelEdtClnt = new PanneauEditerClient(this);
+		panelSuppClnt = new PanneauSupprimerClient(this);
 		cl = new CardLayout();
 
 		this.setTitle("Magasin du futur de l'espoce !");
@@ -44,6 +46,7 @@ public class Fenetre extends JFrame{
 		panel.add(panelMenu, listPanel[0]);
 		panel.add(panelAjtClnt, listPanel[1]);
 		panel.add(panelEdtClnt, listPanel[2]);
+		panel.add(panelSuppClnt, listPanel[3]);
 	}
 
 	/**
@@ -63,11 +66,19 @@ public class Fenetre extends JFrame{
 	}
 
 	/**
-	 * Afficle le formulaire d'ajout d'un client
+	 * Afficle le formulaire d'édition d'un client
 	 */
 	public void editerClient(){
 		panelEdtClnt.menu();
 		cl.show(panel, listPanel[2]);
+	}
+
+	/**
+	 * Afficle le formulaire de suppression de client
+	 */
+	public void supprimerClient(){
+		panelSuppClnt.menu();
+		cl.show(panel, listPanel[3]);
 	}
 
 	/**
