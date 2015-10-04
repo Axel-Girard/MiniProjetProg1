@@ -71,7 +71,12 @@ public class PanneauSupprimerClient extends Panneau{
 					}
 					cpt++;
 				}
-				fen.menu();
+				if(cpt > 0){
+					miseAJourClient();
+				}
+				else{
+					fen.menu();
+				}
 			}
 		});
 
@@ -123,5 +128,6 @@ public class PanneauSupprimerClient extends Panneau{
 		for(Client c : fen.getClient()){
 			jcb.add(new JCheckBox(c.getNom() + " " + c.getPrenom()));
 		}
+		pan.repaint();
 	}
 }

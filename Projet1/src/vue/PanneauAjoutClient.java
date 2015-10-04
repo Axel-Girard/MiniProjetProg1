@@ -27,6 +27,9 @@ public class PanneauAjoutClient extends Panneau{
 
 	private Font police;
 
+	private ActionListener creer;
+	private ActionListener editer;
+
 	public PanneauAjoutClient(Fenetre fenetre){
 		super(fenetre);
 
@@ -42,7 +45,7 @@ public class PanneauAjoutClient extends Panneau{
 		lblPrenom = new JLabel("Prenom : ");
 		lblPrenom.setPreferredSize(new Dimension(largeur/3, hauteur));
 		lblPrenom.setHorizontalAlignment(JLabel.RIGHT);
-		
+
 		jtfPrenom = new JTextField();
 		jtfPrenom.setPreferredSize(new Dimension(largeur/3*2, hauteur));
 
@@ -57,13 +60,33 @@ public class PanneauAjoutClient extends Panneau{
 
 		btnVldr = new JButton("Creer client");
 		btnVldr.setPreferredSize(new Dimension(largeur/2, hauteur));
+		//btnVldr.removeActionListener(creer);
+		btnVldr.removeActionListener(editer);
+
+		creer = new ActionListener(){
+			public void actionPerformed(ActionEvent event){
+				System.out.println("Valider");
+				if(jtfNom.getText() != null){
+					System.out.println("nom OK");
+					if(jtfPrenom.getText() != null){
+						System.out.println("prenom OK");
+						fen.getClient().add(new Client(jtfNom.getText(), jtfPrenom.getText()));
+						fen.menu();
+					}
+				}
+			}
+		};
+		editer = new ActionListener(){
+			public void actionPerformed(ActionEvent event){	}
+		};
+		
 
 		police = new Font("Times New Roman", Font.BOLD, 24);
 
 		this.setPreferredSize(new Dimension(340, 490));
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
-	
+
 		//On positionne la case de départ du composant et sa taille
 		gbc.gridx = 0;
 		gbc.gridy = 0;
@@ -100,7 +123,6 @@ public class PanneauAjoutClient extends Panneau{
 	 * Affiche le menu de base
 	 */
 	public void menu() {
-		removeAll();
 		System.out.println("Menu AC");
 
 		lbl.setFont(police);
@@ -113,19 +135,8 @@ public class PanneauAjoutClient extends Panneau{
 		jtfPrenom.setText("");
 
 		btnVldr.setText("Créer client");
-		btnVldr.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent event){
-				System.out.println("Valider");
-				if(jtfNom.getText() != null){
-					System.out.println("nom OK");
-					if(jtfPrenom.getText() != null){
-						System.out.println("prenom OK");
-						fen.getClient().add(new Client(jtfNom.getText(), jtfPrenom.getText()));
-						fen.menu();
-					}
-				}
-			}
-		});
+		btnVldr.removeActionListener(editer);
+		btnVldr.addActionListener(creer);
 	}
 
 	public void editer(final Client c){
@@ -135,13 +146,16 @@ public class PanneauAjoutClient extends Panneau{
 		jtfPrenom.setText(c.getPrenom());
 
 		btnVldr.setText("Editer Client");
-		btnVldr.addActionListener(new ActionListener(){
+		btnVldr.removeActionListener(creer);
+		//btnVldr.removeActionListener(editer);
+		editer = new ActionListener(){
 			public void actionPerformed(ActionEvent event){
 				System.out.println("Valider Edit");
 				c.setNom(jtfNom.getText());
 				c.setPrenom(jtfPrenom.getText());
 				fen.menu();
 			}
-		});
+		};
+		btnVldr.addActionListener(editer);
 	}
 }

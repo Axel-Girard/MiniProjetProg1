@@ -81,13 +81,11 @@ public class PanneauMenu extends Panneau{
 			b3.setVisible(false);
 			b4.setVisible(false);
 			b5.setVisible(false);
-			b6.setVisible(false);
 		}
 		else{
 			b2.setVisible(true);
 			b3.setVisible(true);
 			b4.setVisible(true);
-			b6.setVisible(true);
 			if(fen.isArticle()){
 				b5.setVisible(true);
 			}else{
