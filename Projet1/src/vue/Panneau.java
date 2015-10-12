@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
-public class Panneau extends JPanel{
+public abstract class Panneau extends JPanel{
 	protected JLabel lbl;
 	protected Fenetre fen;
 	protected int largeur = 250;

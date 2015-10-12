@@ -25,7 +25,7 @@ public class Fenetre extends JFrame{
 	public Fenetre(ArrayList<Client> client) {
 		this.client = client;
 
-		client.add(new Client("NOM", "prenom"));		// A SUPPRIMER !!!!!!!!!
+		client.add(new Client("Johston", "Waverly"));		// A SUPPRIMER !!!!!!!!!
 
 		panel = new JPanel();
 		panelMenu = new PanneauMenu(this);

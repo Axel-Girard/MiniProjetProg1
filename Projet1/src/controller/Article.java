@@ -5,7 +5,7 @@ public abstract class Article {
 	protected String intitule;
 	protected float prix;
 
-	public Article(int ref, String intitule, float prix) {
+	Article(int ref, String intitule, float prix) {
 		this.ref = ref;
 		this.intitule = intitule;
 		this.prix = prix;
@@ -30,8 +30,9 @@ public abstract class Article {
 	public void setPrix(float prix) {
 		this.prix = prix;
 	}
-	public String toString(){
+
+	@Override
+	public String toString() {
 		return this.ref + " " + this.intitule + " " + this.prix;
 	}
-
 }

@@ -140,6 +140,7 @@ public class PanneauAjoutClient extends Panneau{
 
 	public void editer(final Client c){
 		System.out.println("Edition C");
+		lbl.setText("Modifier client");
 
 		jtfNom.setText(c.getNom());
 		jtfPrenom.setText(c.getPrenom());
