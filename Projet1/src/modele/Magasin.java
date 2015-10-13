@@ -7,7 +7,6 @@ import controller.Cordon;
 import controller.ListeArticles;
 import controller.Type;
 
-
 public class Magasin {
 	private static Vendeur vendeur;
 

@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import controller.Client;
+import controller.Marque;
+import controller.Operateur;
+import controller.Telephone;
 
 @SuppressWarnings("serial")
 public class Fenetre extends JFrame{
@@ -25,7 +28,8 @@ public class Fenetre extends JFrame{
 	public Fenetre(ArrayList<Client> client) {
 		this.client = client;
 
-		client.add(new Client("Johston", "Waverly"));		// A SUPPRIMER !!!!!!!!!
+		Telephone tel = new Telephone(12, "Samsung wave 1", (float) 125.50, "0612538967", new Operateur("Bouigue"), new Marque("Samsung"));
+		client.add(new Client("Johston", "Waverly", tel));		// A SUPPRIMER !!!!!!!!!
 
 		panel = new JPanel();
 		panelMenu = new PanneauMenu(this);
@@ -34,7 +38,7 @@ public class Fenetre extends JFrame{
 		panelSuppClnt = new PanneauSupprimerClient(this);
 		cl = new CardLayout();
 
-		this.setTitle("Magasin du futur de l'espoce !");
+		this.setTitle("Magasin du futur de l'espôce !");
 		this.setSize(350, 500);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -78,7 +82,8 @@ public class Fenetre extends JFrame{
 	 * @param c Client à éditer
 	 */
 	public void editerClient(Client c){
-		panelAjtClnt.editer(c);
+		panelAjtClnt.setC(c);
+		panelAjtClnt.editer();
 		cl.show(panel, listPanel[1]);
 	}
 

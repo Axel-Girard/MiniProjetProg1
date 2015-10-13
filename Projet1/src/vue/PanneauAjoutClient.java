@@ -1,39 +1,35 @@
 package vue;
 
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import controller.Client;
+import controller.Marque;
+import controller.Telephone;
 
 @SuppressWarnings("serial")
-public class PanneauAjoutClient extends Panneau{
+public class PanneauAjoutClient extends PanneauAjout{
 	private JLabel lblNom;
 	private final JTextField jtfNom;
 	private JLabel lblPrenom;
 	private final JTextField jtfPrenom;
+	private JLabel lblRef;
+	private final JTextField jtfRef;
+	private JLabel lblIntitule;
+	private final JTextField jtfIntitule;
+	private JLabel lblPrix;
+	private final JTextField jtfPrix;
+	private JLabel lblNum;
+	private final JTextField jtfNum;
+	private JLabel lblMarque;
+	private final JTextField jtfMarque;
 
-	private JButton btnRtr;
-	private JButton btnVldr;
-
-	private Font police;
-
-	private ActionListener creer;
-	private ActionListener editer;
-
-	public PanneauAjoutClient(Fenetre fenetre){
-		super(fenetre);
-
-		this.setBackground(Color.GREEN);
+	public PanneauAjoutClient(Fenetre fen){
+		super(fen);
 
 		lblNom = new JLabel("Nom : ");
 		lblNom.setPreferredSize(new Dimension(largeur/3, hauteur));
@@ -49,72 +45,93 @@ public class PanneauAjoutClient extends Panneau{
 		jtfPrenom = new JTextField();
 		jtfPrenom.setPreferredSize(new Dimension(largeur/3*2, hauteur));
 
-		btnRtr = new JButton("Retour");
-		btnRtr.setPreferredSize(new Dimension(largeur/2, hauteur));
-		btnRtr.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent event){
-				System.out.println("Valider Edit");
-				fen.menu();
-			}
-		});
+		lblRef = new JLabel("Ref : ");
+		lblRef.setPreferredSize(new Dimension(largeur/3, hauteur));
+		lblRef.setHorizontalAlignment(JLabel.RIGHT);
 
-		btnVldr = new JButton("Creer client");
-		btnVldr.setPreferredSize(new Dimension(largeur/2, hauteur));
+		jtfRef = new JTextField();
+		jtfRef.setPreferredSize(new Dimension((largeur/3)*2, hauteur));
 
-		creer = new ActionListener(){
-			public void actionPerformed(ActionEvent event){
-				System.out.println("Valider");
-				if(jtfNom.getText() != null){
-					System.out.println("nom OK");
-					if(jtfPrenom.getText() != null){
-						System.out.println("prenom OK");
-						fen.getClient().add(new Client(jtfNom.getText(), jtfPrenom.getText()));
-						fen.menu();
-					}
-				}
-			}
-		};
-		editer = new ActionListener(){
-			public void actionPerformed(ActionEvent event){	}
-		};
-		
+		lblIntitule = new JLabel("Intitule : ");
+		lblIntitule.setPreferredSize(new Dimension(largeur/3, hauteur));
+		lblIntitule.setHorizontalAlignment(JLabel.RIGHT);
 
-		police = new Font("Times New Roman", Font.BOLD, 24);
+		jtfIntitule = new JTextField();
+		jtfIntitule.setPreferredSize(new Dimension(largeur/3*2, hauteur));
 
-		this.setPreferredSize(new Dimension(340, 490));
-		this.setLayout(new GridBagLayout());
-		GridBagConstraints gbc = new GridBagConstraints();
+		lblPrix = new JLabel("Prix : ");
+		lblPrix.setPreferredSize(new Dimension(largeur/3, hauteur));
+		lblPrix.setHorizontalAlignment(JLabel.RIGHT);
 
-		//On positionne la case de départ du composant et sa taille
+		jtfPrix = new JTextField();
+		jtfPrix.setPreferredSize(new Dimension(largeur/3*2, hauteur));
+
+		lblNum = new JLabel("Num : ");
+		lblNum.setPreferredSize(new Dimension(largeur/3, hauteur));
+		lblNum.setHorizontalAlignment(JLabel.RIGHT);
+
+		jtfNum = new JTextField();
+		jtfNum.setPreferredSize(new Dimension(largeur/3*2, hauteur));
+
+		lblMarque = new JLabel("Marque : ");
+		lblMarque.setPreferredSize(new Dimension(largeur/3, hauteur));
+		lblMarque.setHorizontalAlignment(JLabel.RIGHT);
+
+		jtfMarque = new JTextField();
+		jtfMarque.setPreferredSize(new Dimension(largeur/3*2, hauteur));
+
 		gbc.gridx = 0;
 		gbc.gridy = 0;
 		gbc.gridheight = 1;
-		gbc.gridwidth = 2;
-		//La marge entre chaque composant (haut, gauche, bas, droit)
-		gbc.insets = new Insets(0, 0, 0, 0);
-		this.add(lbl, gbc);
-		//---------------------------------------------
-		gbc.gridy = 1;
 		gbc.gridwidth = 1;
-		gbc.insets.top = 3;
-		this.add(lblNom, gbc);
+		gbc.insets.top = 0;
+		panel.add(lblNom, gbc);
 
 		gbc.gridx = 1;
-		this.add(jtfNom, gbc);
+		panel.add(jtfNom, gbc);
+		//---------------------------------------------
+		gbc.gridy = 1;
+		gbc.gridx = 0;
+		gbc.insets.top = 3;
+		panel.add(lblPrenom, gbc);
+
+		gbc.gridx = 1;
+		panel.add(jtfPrenom, gbc);
 		//---------------------------------------------
 		gbc.gridy = 2;
 		gbc.gridx = 0;
-		this.add(lblPrenom, gbc);
+		panel.add(lblRef, gbc);
 
 		gbc.gridx = 1;
-		this.add(jtfPrenom, gbc);
+		panel.add(jtfRef, gbc);
 		//---------------------------------------------
 		gbc.gridy = 3;
 		gbc.gridx = 0;
-		this.add(btnRtr, gbc);
+		panel.add(lblIntitule, gbc);
 
 		gbc.gridx = 1;
-		this.add(btnVldr, gbc);
+		panel.add(jtfIntitule, gbc);
+		//---------------------------------------------
+		gbc.gridy = 4;
+		gbc.gridx = 0;
+		panel.add(lblPrix, gbc);
+
+		gbc.gridx = 1;
+		panel.add(jtfPrix, gbc);
+		//---------------------------------------------
+		gbc.gridy = 5;
+		gbc.gridx = 0;
+		panel.add(lblNum, gbc);
+
+		gbc.gridx = 1;
+		panel.add(jtfNum, gbc);
+		//---------------------------------------------
+		gbc.gridy = 6;
+		gbc.gridx = 0;
+		panel.add(lblMarque, gbc);
+
+		gbc.gridx = 1;
+		panel.add(jtfMarque, gbc);
 	}
 
 	/**
@@ -131,6 +148,11 @@ public class PanneauAjoutClient extends Panneau{
 
 		jtfNom.setText("");
 		jtfPrenom.setText("");
+		jtfRef.setText("");
+		jtfIntitule.setText("");
+		jtfPrix.setText("");
+		jtfNum.setText("");
+		jtfMarque.setText("");
 
 		btnVldr.setText("Créer client");
 		btnVldr.removeActionListener(editer);
@@ -138,24 +160,54 @@ public class PanneauAjoutClient extends Panneau{
 		btnVldr.addActionListener(creer);
 	}
 
-	public void editer(final Client c){
+	/**
+	 * Edite un client
+	 * @param c le Client à éditer
+	 */
+	public void editer(){
 		System.out.println("Edition C");
 		lbl.setText("Modifier client");
 
 		jtfNom.setText(c.getNom());
 		jtfPrenom.setText(c.getPrenom());
+		jtfRef.setText(Integer.toString(c.getTel().getRef()));
+		jtfIntitule.setText(c.getTel().getIntitule());
+		jtfPrix.setText(Float.toString(c.getTel().getPrix()));
+		jtfNum.setText(c.getTel().getNumero());
+		jtfMarque.setText(c.getTel().getMarque().getNom());
 
 		btnVldr.setText("Editer Client");
 		btnVldr.removeActionListener(creer);
 		btnVldr.removeActionListener(editer);
+		btnVldr.addActionListener(editer);
+	}
+
+	@Override
+	public void actionListener() {
+		creer = new ActionListener(){
+			public void actionPerformed(ActionEvent event){
+				if(jtfNom.getText().length() != 0 && jtfPrenom.getText().length() != 0 && jtfRef.getText().length() != 0
+						&& jtfIntitule.getText().length() != 0 && jtfPrix.getText().length() != 0
+						&& jtfNum.getText().length() != 0 && jtfMarque.getText().length() != 0){
+					System.out.println("données OK");
+					fen.getClient().add(new Client(jtfNom.getText(), jtfPrenom.getText(),
+							new Telephone(Integer.parseInt(jtfRef.getText()), jtfIntitule.getText(),
+							Float.parseFloat(jtfPrix.getText()), jtfNum.getText(), null, new Marque(jtfMarque.getText()))));
+					fen.menu();
+				}
+			}
+		};
 		editer = new ActionListener(){
 			public void actionPerformed(ActionEvent event){
 				System.out.println("Valider Edit");
 				c.setNom(jtfNom.getText());
 				c.setPrenom(jtfPrenom.getText());
+				c.getTel().setRef(Integer.parseInt(jtfRef.getText()));
+				c.getTel().setIntitule(jtfIntitule.getText());
+				c.getTel().setPrix(Float.parseFloat(jtfPrix.getText()));
+				c.getTel().getMarque().setNom(jtfMarque.getText());
 				fen.menu();
 			}
 		};
-		btnVldr.addActionListener(editer);
 	}
 }

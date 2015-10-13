@@ -37,9 +37,7 @@ public abstract class PanneauSupprimer extends PanneauSelection{
 				if(cpt > 0){
 					miseAJour();
 				}
-				else{
-					fen.menu();
-				}
+				fen.menu();
 			}
 		});
 

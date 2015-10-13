@@ -4,16 +4,19 @@ public class Client {
 	private ListeArticles liste;
 	private String nom;
 	private String prenom;
+	private Telephone tel;
 
-	public Client(ListeArticles liste, String nom, String prenom){
+	public Client(ListeArticles liste, String nom, Telephone tel, String prenom){
 		this.liste = liste;
 		this.nom = nom;
 		this.prenom = prenom;
+		this.tel = tel;
 	}
-	public Client(String nom, String prenom){
+	public Client(String nom, String prenom, Telephone tel){
 		this.liste = new ListeArticles();
 		this.nom = nom;
 		this.prenom = prenom;
+		this.tel = tel;
 		System.out.println("Client créer " + nom + " " + prenom);
 	}
 
@@ -60,6 +63,18 @@ public class Client {
 	}
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
+	}
+	/**
+	 * @return the tel
+	 */
+	public Telephone getTel() {
+		return tel;
+	}
+	/**
+	 * @param tel the tel to set
+	 */
+	public void setTel(Telephone tel) {
+		this.tel = tel;
 	}
 
 	// toString

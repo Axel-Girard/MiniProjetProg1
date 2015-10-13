@@ -22,7 +22,7 @@ public class PanneauSupprimerClient extends PanneauSupprimer{
 		System.out.println("Menu SC");
 		super.menu();
 		lbl.setText("Suppression d'un client");
-		btnVldr.setText("SupprimerClient");
+		btnVldr.setText("Suppr. client");
 	}
 
 	/**

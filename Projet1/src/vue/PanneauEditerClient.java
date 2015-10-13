@@ -34,7 +34,6 @@ public class PanneauEditerClient extends PanneauEdition{
 	}
 
 	public void editer(int cpt) {
-		Client c = fen.getClient().get(cpt);
-		fen.editerClient(c);
+		fen.editerClient(fen.getClient().get(cpt));
 	}
 }

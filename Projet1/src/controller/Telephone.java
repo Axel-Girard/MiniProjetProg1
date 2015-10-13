@@ -1,11 +1,11 @@
 package controller;
 
 public class Telephone extends Article{
-	private int numero;
+	private String numero;
 	private Operateur operateur;
 	private Marque marque;
 
-	public Telephone(int ref, String intitule, float prix, int numero, Operateur operateur, Marque marque) {
+	public Telephone(int ref, String intitule, float prix, String numero, Operateur operateur, Marque marque) {
 		super(ref, intitule, prix);
 		this.numero = numero;
 		this.operateur = operateur;
@@ -13,10 +13,10 @@ public class Telephone extends Article{
 	}
 
 	// Getter Setter
-	public int getNumero() {
+	public String getNumero() {
 		return numero;
 	}
-	public void setNumero(int numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 	public Operateur getOperateur() {
