@@ -1,13 +1,10 @@
 package vue;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import modele.BaseDeDonnees;
 
 
 @SuppressWarnings("serial")
-public class PanneauAjoutArticle extends PanneauSelection{
+public class PanneauAjoutArticle extends PanneauSelectionMultiple{
 
 	private BaseDeDonnees bdd;
 
@@ -18,30 +15,14 @@ public class PanneauAjoutArticle extends PanneauSelection{
 	}
 
 	@Override
-	public void actionListener() {
-		creer = new ActionListener(){
-			public void actionPerformed(ActionEvent event){
-				System.out.println("Valider");
-				
-			}
-		};
-		editer = new ActionListener(){
-			public void actionPerformed(ActionEvent event){
-				System.out.println("Valider Edit");
-				//c.setNom(jtfNom.getText());
-				//c.setPrenom(jtfPrenom.getText());
-				fen.menu();
-			}
-		};
-	}
-
-	@Override
-	public void menu() {
+	public void supprimer(int cpt) {
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void editer() {
+	public void miseAJour() {
+		// TODO Auto-generated method stub
 		
 	}
 

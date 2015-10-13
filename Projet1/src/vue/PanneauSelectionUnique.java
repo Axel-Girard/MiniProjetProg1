@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 
-import controller.Client;
-
 @SuppressWarnings("serial")
 public abstract class PanneauSelectionUnique extends PanneauSelection{
 	protected ButtonGroup bg;
