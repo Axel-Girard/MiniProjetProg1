@@ -58,7 +58,7 @@ public abstract class PanneauSelection extends Panneau{
 		pan.setBackground(Color.CYAN);
 
 		scroll.setBackground(Color.GRAY);
-		scroll.setPreferredSize(new Dimension(largeur, hauteur*5));
+		scroll.setPreferredSize(new Dimension(largeur + 20, hauteur * 10));
 
 		//On positionne la case de départ du composant et sa taille
 		gbc.gridx = 0;

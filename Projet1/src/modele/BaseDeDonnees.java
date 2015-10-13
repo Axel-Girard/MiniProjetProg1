@@ -12,6 +12,8 @@ import controller.Telephone;
 import controller.Type;
 
 public class BaseDeDonnees {
+	private static BaseDeDonnees instance = null;
+
 	private ArrayList<Accessoire> accessoires;
 	private ArrayList<Telephone> telephones;
 
@@ -80,12 +82,12 @@ public class BaseDeDonnees {
 		accessoires.add(cor3);
 	}
 
-	public BaseDeDonnees getInstance(){
-		if(this.equals(null)){
+	public static BaseDeDonnees getInstance(){
+		if(instance.equals(null)){
 			return new BaseDeDonnees();
 		}
 		else{
-			return this;
+			return instance;
 		}
 	}
 

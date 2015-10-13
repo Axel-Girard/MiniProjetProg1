@@ -7,7 +7,7 @@ import javax.swing.JCheckBox;
 import controller.Client;
 
 @SuppressWarnings("serial")
-public class PanneauSupprimerClient extends PanneauSupprimer{
+public class PanneauSupprimerClient extends PanneauSelectionMultiple{
 
 	PanneauSupprimerClient(Fenetre fen){
 		super(fen);

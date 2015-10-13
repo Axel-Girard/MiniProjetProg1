@@ -61,9 +61,6 @@ public abstract class PanneauAjout extends Panneau{
 		this.setLayout(new GridBagLayout());
 	
 		panel.setBackground(Color.CYAN);
-	
-		scroll.setBackground(Color.GRAY);
-		scroll.setPreferredSize(new Dimension(largeur + 20, hauteur*6));
 		panel.setLayout(new GridBagLayout());
 	
 		//On positionne la case de départ du composant et sa taille
@@ -102,6 +99,23 @@ public abstract class PanneauAjout extends Panneau{
 	 * @param c le Client à éditer
 	 */
 	public abstract void editer();
+	
+	/**
+	 * Retourne true si str est numérique
+	 * @param str chaine à tester
+	 * @return true si str est numérique
+	 */
+	public static boolean isNumeric(String str){
+		try{
+			Double.parseDouble(str);  
+		}
+		catch(NumberFormatException nfe){
+			System.out.println(false);
+			return false;  
+		}
+		System.out.println(true);
+		return true;  
+	}
 
 	// Accesseurs
 	public void setC(Client c){

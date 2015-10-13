@@ -20,22 +20,25 @@ public class Fenetre extends JFrame{
 	private PanneauAjoutClient panelAjtClnt;
 	private PanneauEditerClient panelEdtClnt;
 	private PanneauSupprimerClient panelSuppClnt;
+	private PanneauAjoutArticle panelAjtArtcl;
 
 	private CardLayout cl;
-	private String[] listPanel = {"MenuGeneral", "AjoutClient", "EditerClient", "SupprimerClient"};
+	private String[] listPanel = {"MenuGeneral", "AjoutClient", "EditerClient", "SupprimerClient", "AjouterArticle"};
 	private ArrayList<Client> client;
 
 	public Fenetre(ArrayList<Client> client) {
 		this.client = client;
 
 		Telephone tel = new Telephone(12, "Samsung wave 1", (float) 125.50, "0612538967", new Operateur("Bouigue"), new Marque("Samsung"));
-		client.add(new Client("Johston", "Waverly", tel));		// A SUPPRIMER !!!!!!!!!
+		client.add(new Client("Johston", "Waverly", tel));		// A SUPPRIMER !!!!!!!!! (et au dessus aussi)
 
 		panel = new JPanel();
 		panelMenu = new PanneauMenu(this);
 		panelAjtClnt = new PanneauAjoutClient(this);
 		panelEdtClnt = new PanneauEditerClient(this);
 		panelSuppClnt = new PanneauSupprimerClient(this);
+		panelAjtArtcl = new PanneauAjoutArticle(this);
+
 		cl = new CardLayout();
 
 		this.setTitle("Magasin du futur de l'espôce !");
@@ -51,6 +54,7 @@ public class Fenetre extends JFrame{
 		panel.add(panelAjtClnt, listPanel[1]);
 		panel.add(panelEdtClnt, listPanel[2]);
 		panel.add(panelSuppClnt, listPanel[3]);
+		panel.add(panelAjtArtcl, listPanel[4]);
 	}
 
 	/**
@@ -93,6 +97,14 @@ public class Fenetre extends JFrame{
 	public void supprimerClient(){
 		panelSuppClnt.menu();
 		cl.show(panel, listPanel[3]);
+	}
+
+	/**
+	 * Afficle le formulaire d'ajout d'un article à un client
+	 */
+	public void ajouterArticle(){
+		panelAjtArtcl.menu();
+		cl.show(panel, listPanel[4]);
 	}
 
 	/**

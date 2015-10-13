@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import javax.swing.JCheckBox;
 
 @SuppressWarnings("serial")
-public abstract class PanneauSupprimer extends PanneauSelection{
+public abstract class PanneauSelectionMultiple extends PanneauSelection{
 	protected ArrayList<JCheckBox> arrayCompo;
 
-	PanneauSupprimer(Fenetre fen) {
+	PanneauSelectionMultiple(Fenetre fen) {
 		super(fen);
 
 		arrayCompo = new ArrayList<JCheckBox>();

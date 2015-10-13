@@ -1,5 +1,6 @@
 package vue;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,10 +14,12 @@ import controller.Telephone;
 
 @SuppressWarnings("serial")
 public class PanneauAjoutClient extends PanneauAjout{
+	private JLabel lblClient;
 	private JLabel lblNom;
 	private final JTextField jtfNom;
 	private JLabel lblPrenom;
 	private final JTextField jtfPrenom;
+	private JLabel lblTel;
 	private JLabel lblRef;
 	private final JTextField jtfRef;
 	private JLabel lblIntitule;
@@ -30,6 +33,10 @@ public class PanneauAjoutClient extends PanneauAjout{
 
 	public PanneauAjoutClient(Fenetre fen){
 		super(fen);
+
+		lblClient = new JLabel("Données du client");
+		lblClient.setPreferredSize(new Dimension(largeur, hauteur));
+		lblClient.setHorizontalAlignment(JLabel.LEFT);
 
 		lblNom = new JLabel("Nom : ");
 		lblNom.setPreferredSize(new Dimension(largeur/3, hauteur));
@@ -45,6 +52,10 @@ public class PanneauAjoutClient extends PanneauAjout{
 		jtfPrenom = new JTextField();
 		jtfPrenom.setPreferredSize(new Dimension(largeur/3*2, hauteur));
 
+		lblTel = new JLabel("Données du téléphone");
+		lblTel.setPreferredSize(new Dimension(largeur, hauteur));
+		lblTel.setHorizontalAlignment(JLabel.LEFT);
+		
 		lblRef = new JLabel("Ref : ");
 		lblRef.setPreferredSize(new Dimension(largeur/3, hauteur));
 		lblRef.setHorizontalAlignment(JLabel.RIGHT);
@@ -83,14 +94,19 @@ public class PanneauAjoutClient extends PanneauAjout{
 		gbc.gridx = 0;
 		gbc.gridy = 0;
 		gbc.gridheight = 1;
-		gbc.gridwidth = 1;
+		gbc.gridwidth = 2;
 		gbc.insets.top = 0;
+		panel.add(lblClient, gbc);
+		//--------------------------------------------
+		gbc.gridy++;
+		gbc.gridx = 0;
+		gbc.gridwidth = 1;
 		panel.add(lblNom, gbc);
 
 		gbc.gridx = 1;
 		panel.add(jtfNom, gbc);
 		//---------------------------------------------
-		gbc.gridy = 1;
+		gbc.gridy++;
 		gbc.gridx = 0;
 		gbc.insets.top = 3;
 		panel.add(lblPrenom, gbc);
@@ -98,35 +114,41 @@ public class PanneauAjoutClient extends PanneauAjout{
 		gbc.gridx = 1;
 		panel.add(jtfPrenom, gbc);
 		//---------------------------------------------
-		gbc.gridy = 2;
+		gbc.gridy++;
 		gbc.gridx = 0;
+		gbc.gridwidth = 2;
+		panel.add(lblTel, gbc);
+		//---------------------------------------------
+		gbc.gridy++;
+		gbc.gridx = 0;
+		gbc.gridwidth = 1;
 		panel.add(lblRef, gbc);
 
 		gbc.gridx = 1;
 		panel.add(jtfRef, gbc);
 		//---------------------------------------------
-		gbc.gridy = 3;
+		gbc.gridy++;
 		gbc.gridx = 0;
 		panel.add(lblIntitule, gbc);
 
 		gbc.gridx = 1;
 		panel.add(jtfIntitule, gbc);
 		//---------------------------------------------
-		gbc.gridy = 4;
+		gbc.gridy++;
 		gbc.gridx = 0;
 		panel.add(lblPrix, gbc);
 
 		gbc.gridx = 1;
 		panel.add(jtfPrix, gbc);
 		//---------------------------------------------
-		gbc.gridy = 5;
+		gbc.gridy++;
 		gbc.gridx = 0;
 		panel.add(lblNum, gbc);
 
 		gbc.gridx = 1;
 		panel.add(jtfNum, gbc);
 		//---------------------------------------------
-		gbc.gridy = 6;
+		gbc.gridy++;
 		gbc.gridx = 0;
 		panel.add(lblMarque, gbc);
 
@@ -139,6 +161,8 @@ public class PanneauAjoutClient extends PanneauAjout{
 	 */
 	public void menu() {
 		System.out.println("Menu AC");
+
+		initialiserChamps();
 
 		lbl.setFont(police);
 		lbl.setHorizontalAlignment(JLabel.CENTER);
@@ -168,6 +192,8 @@ public class PanneauAjoutClient extends PanneauAjout{
 		System.out.println("Edition C");
 		lbl.setText("Modifier client");
 
+		initialiserChamps();
+
 		jtfNom.setText(c.getNom());
 		jtfPrenom.setText(c.getPrenom());
 		jtfRef.setText(Integer.toString(c.getTel().getRef()));
@@ -182,31 +208,87 @@ public class PanneauAjoutClient extends PanneauAjout{
 		btnVldr.addActionListener(editer);
 	}
 
+	/**
+	 * Initialise la couleur de fond des champs de text
+	 */
+	public void initialiserChamps(){
+		jtfNom.setBackground(Color.WHITE);
+		jtfPrenom.setBackground(Color.WHITE);
+		jtfRef.setBackground(Color.WHITE);
+		jtfIntitule.setBackground(Color.WHITE);
+		jtfPrix.setBackground(Color.WHITE);
+		jtfNum.setBackground(Color.WHITE);
+		jtfMarque.setBackground(Color.WHITE);
+	}
+
+	/**
+	 * détecte les erreurs de saisie puis traite les données (sans vulgarités)
+	 * @param creer si vrai créer un utilisateur sinon l'édite
+	 */
+	public void test(boolean creer){
+		if(jtfNom.getText().length() != 0){
+			if(jtfPrenom.getText().length() != 0){
+				if(jtfRef.getText().length() != 0 && isNumeric(jtfRef.getText())){
+					if(jtfIntitule.getText().length() != 0){
+						if(jtfPrix.getText().length() != 0 && isNumeric(jtfPrix.getText())){
+							if(jtfNum.getText().length() != 0){
+								if(jtfMarque.getText().length() != 0){
+									if(creer){
+										System.out.println("données OK");
+										fen.getClient().add(new Client(jtfNom.getText(), jtfPrenom.getText(),
+												new Telephone(Integer.parseInt(jtfRef.getText()), jtfIntitule.getText(),
+												Float.parseFloat(jtfPrix.getText()), jtfNum.getText(), null, new Marque(jtfMarque.getText()))));
+										fen.menu();
+									}
+									else{
+										System.out.println("Valider Edit");
+										c.setNom(jtfNom.getText());
+										c.setPrenom(jtfPrenom.getText());
+										c.getTel().setRef(Integer.parseInt(jtfRef.getText()));
+										c.getTel().setIntitule(jtfIntitule.getText());
+										c.getTel().setPrix(Float.parseFloat(jtfPrix.getText()));
+										c.getTel().getMarque().setNom(jtfMarque.getText());
+										fen.menu();
+									}
+								}
+								else{
+									jtfMarque.setBackground(Color.RED);
+								}
+							}
+							else{
+								jtfNum.setBackground(Color.RED);
+							}
+						}
+						else{
+							jtfPrix.setBackground(Color.RED);
+						}
+					}
+					else{
+						jtfIntitule.setBackground(Color.RED);
+					}
+				}
+				else{
+					jtfRef.setBackground(Color.RED);
+				}
+			}
+			else{
+				jtfPrenom.setBackground(Color.RED);
+			}
+		}
+		else{
+			jtfNom.setBackground(Color.RED);
+		}
+	}
 	@Override
 	public void actionListener() {
 		creer = new ActionListener(){
 			public void actionPerformed(ActionEvent event){
-				if(jtfNom.getText().length() != 0 && jtfPrenom.getText().length() != 0 && jtfRef.getText().length() != 0
-						&& jtfIntitule.getText().length() != 0 && jtfPrix.getText().length() != 0
-						&& jtfNum.getText().length() != 0 && jtfMarque.getText().length() != 0){
-					System.out.println("données OK");
-					fen.getClient().add(new Client(jtfNom.getText(), jtfPrenom.getText(),
-							new Telephone(Integer.parseInt(jtfRef.getText()), jtfIntitule.getText(),
-							Float.parseFloat(jtfPrix.getText()), jtfNum.getText(), null, new Marque(jtfMarque.getText()))));
-					fen.menu();
-				}
+				test(true);
 			}
 		};
 		editer = new ActionListener(){
 			public void actionPerformed(ActionEvent event){
-				System.out.println("Valider Edit");
-				c.setNom(jtfNom.getText());
-				c.setPrenom(jtfPrenom.getText());
-				c.getTel().setRef(Integer.parseInt(jtfRef.getText()));
-				c.getTel().setIntitule(jtfIntitule.getText());
-				c.getTel().setPrix(Float.parseFloat(jtfPrix.getText()));
-				c.getTel().getMarque().setNom(jtfMarque.getText());
-				fen.menu();
+				test(false);
 			}
 		};
 	}

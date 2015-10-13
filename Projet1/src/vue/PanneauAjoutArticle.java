@@ -3,17 +3,18 @@ package vue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import controller.Article;
+import modele.BaseDeDonnees;
 
 
 @SuppressWarnings("serial")
-public class PanneauAjoutArticle extends PanneauAjout{
+public class PanneauAjoutArticle extends PanneauSelection{
 
-	private Article a;
+	private BaseDeDonnees bdd;
 
 	PanneauAjoutArticle(Fenetre fen) {
 		super(fen);
 
+		bdd = BaseDeDonnees.getInstance();
 	}
 
 	@Override
@@ -48,8 +49,8 @@ public class PanneauAjoutArticle extends PanneauAjout{
 	/**
 	 * @param a the a to set
 	 */
-	public void setA(Article a) {
+	/*public void setA(Article a) {
 		this.a = a;
-	}
+	}*/
 
 }

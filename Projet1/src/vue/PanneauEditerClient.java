@@ -5,7 +5,7 @@ import javax.swing.JRadioButton;
 import controller.Client;
 
 @SuppressWarnings("serial")
-public class PanneauEditerClient extends PanneauEdition{
+public class PanneauEditerClient extends PanneauSelectionUnique{
 
 	PanneauEditerClient(Fenetre fen){
 		super(fen);

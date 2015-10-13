@@ -63,6 +63,12 @@ public class PanneauMenu extends Panneau{
 
 		JButton b4 = new JButton("Ajouter article");
 		b4.setPreferredSize(new Dimension(largeur, hauteur));
+		b4.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){				
+				fen.ajouterArticle();
+			}
+		});
+
 		JButton b5 = new JButton("Supprimer article");
 		b5.setPreferredSize(new Dimension(largeur, hauteur));
 		JButton b6 = new JButton("Sauvegarder et quitter");

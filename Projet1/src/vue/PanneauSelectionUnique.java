@@ -12,11 +12,11 @@ import javax.swing.JRadioButton;
 import controller.Client;
 
 @SuppressWarnings("serial")
-public abstract class PanneauEdition extends PanneauSelection{
+public abstract class PanneauSelectionUnique extends PanneauSelection{
 	protected ButtonGroup bg;
 	protected ArrayList<JRadioButton> jrb;
 
-	PanneauEdition(Fenetre fen) {
+	PanneauSelectionUnique(Fenetre fen) {
 		super(fen);
 
 		this.setBackground(Color.RED);
