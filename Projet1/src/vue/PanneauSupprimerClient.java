@@ -2,12 +2,8 @@ package vue;
 
 import java.awt.Color;
 
-import javax.swing.JCheckBox;
-
-import controller.Client;
-
 @SuppressWarnings("serial")
-public class PanneauSupprimerClient extends PanneauSelectionMultiple{
+public class PanneauSupprimerClient extends PanneauSelectionMultiClient{
 
 	PanneauSupprimerClient(Fenetre fen){
 		super(fen);
@@ -25,20 +21,8 @@ public class PanneauSupprimerClient extends PanneauSelectionMultiple{
 		btnVldr.setText("Suppr. client");
 	}
 
-	/**
-	 * Met à jour l'interface de selection des clients
-	 */
-	public void miseAJour(){
-		pan.removeAll();
-		pan.repaint();
-		arrayCompo.clear();
-		for(Client c : fen.getClient()){
-			arrayCompo.add(new JCheckBox(c.getNom() + " " + c.getPrenom()));
-		}
-	}
-
 	@Override
-	public void supprimer(int cpt) {
+	public void action(int cpt) {
 		if(!fen.getClient().isEmpty()){
 			fen.getClient().remove(fen.getClient().get(cpt));
 		}

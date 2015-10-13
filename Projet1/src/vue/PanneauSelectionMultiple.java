@@ -29,7 +29,7 @@ public abstract class PanneauSelectionMultiple extends PanneauSelection{
 				int cpt = 0;
 				for(JCheckBox cb : arrayCompo){
 					if(cb.isSelected()){
-						supprimer(cpt);
+						action(cpt);
 						cpt--;
 					}
 					cpt++;
@@ -37,7 +37,7 @@ public abstract class PanneauSelectionMultiple extends PanneauSelection{
 				if(cpt > 0){
 					miseAJour();
 				}
-				fen.menu();
+				interfaceRetour();
 			}
 		});
 
@@ -50,8 +50,15 @@ public abstract class PanneauSelectionMultiple extends PanneauSelection{
 	}
 
 	/**
-	 * Supprime l'élément sélectionné
-	 * @param cpt l'élément à supprimer
+	 * Réaliser une action sur l'élément sélectionné
+	 * @param cpt l'élément à modifier
 	 */
-	public abstract void supprimer(int cpt);
+	public abstract void action(int cpt);
+
+	/**
+	 * Détermine l'interface appellée lors de la validation
+	 */
+	public void interfaceRetour(){
+		fen.menu();
+	}
 }
