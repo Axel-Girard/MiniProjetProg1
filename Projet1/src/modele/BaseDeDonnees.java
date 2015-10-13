@@ -83,7 +83,7 @@ public class BaseDeDonnees {
 	}
 
 	public static BaseDeDonnees getInstance(){
-		if(instance.equals(null)){
+		if(BaseDeDonnees.instance == null){
 			return new BaseDeDonnees();
 		}
 		else{

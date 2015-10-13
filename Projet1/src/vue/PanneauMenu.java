@@ -45,57 +45,58 @@ public class PanneauMenu extends Panneau{
 			}
 		});
 
-		JButton b2 = new JButton("Editer client");
-		b2.setPreferredSize(new Dimension(largeur, hauteur));
-		b2.addActionListener(new ActionListener(){
+		JButton btnEdtrClnt = new JButton("Editer client");
+		btnEdtrClnt.setPreferredSize(new Dimension(largeur, hauteur));
+		btnEdtrClnt.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){				
 				fen.editerClient();
 			}
 		});
 	
-		JButton b3 = new JButton("Supprimer client");
-		b3.setPreferredSize(new Dimension(largeur, hauteur));
-		b3.addActionListener(new ActionListener(){
+		JButton btnSupprClnt = new JButton("Supprimer client");
+		btnSupprClnt.setPreferredSize(new Dimension(largeur, hauteur));
+		btnSupprClnt.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){				
 				fen.supprimerClient();
 			}
 		});
 
-		JButton b4 = new JButton("Ajouter article");
-		b4.setPreferredSize(new Dimension(largeur, hauteur));
-		b4.addActionListener(new ActionListener(){
+		JButton btnAjtArtcl = new JButton("Ajouter article");
+		btnAjtArtcl.setPreferredSize(new Dimension(largeur, hauteur));
+		btnAjtArtcl.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){				
 				fen.ajouterArticle();
 			}
 		});
 
-		JButton b5 = new JButton("Supprimer article");
-		b5.setPreferredSize(new Dimension(largeur, hauteur));
-		JButton b6 = new JButton("Sauvegarder et quitter");
-		b5.addActionListener(new ActionListener(){
+		JButton btnSupprArtcl = new JButton("Supprimer article");
+		btnSupprArtcl.setPreferredSize(new Dimension(largeur, hauteur));
+
+		JButton btnSauvergarder = new JButton("Sauvegarder et quitter");
+		btnSauvergarder.setPreferredSize(new Dimension(largeur, hauteur));
+		btnSauvergarder.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){				
-				System.out.println("ok");
+				System.out.println("A faire en dernier");
 			}
 		});
 
-		b6.setPreferredSize(new Dimension(largeur, hauteur));
-		BouttonQuitter b7 = new BouttonQuitter("Quitter sans sauvegarder");
-		b7.setPreferredSize(new Dimension(largeur, hauteur));
+		BouttonQuitter btnQuit = new BouttonQuitter("Quitter sans sauvegarder");
+		btnQuit.setPreferredSize(new Dimension(largeur, hauteur));
 
 		if(fen.getClient().isEmpty()){
-			b2.setVisible(false);
-			b3.setVisible(false);
-			b4.setVisible(false);
-			b5.setVisible(false);
+			btnEdtrClnt.setVisible(false);
+			btnSupprClnt.setVisible(false);
+			btnAjtArtcl.setVisible(false);
+			btnSupprArtcl.setVisible(false);
 		}
 		else{
-			b2.setVisible(true);
-			b3.setVisible(true);
-			b4.setVisible(true);
+			btnEdtrClnt.setVisible(true);
+			btnSupprClnt.setVisible(true);
+			btnAjtArtcl.setVisible(true);
 			if(fen.isArticle()){
-				b5.setVisible(true);
+				btnSupprArtcl.setVisible(true);
 			}else{
-				b5.setVisible(false);
+				btnSupprArtcl.setVisible(false);
 			}
 		}
 
@@ -121,22 +122,22 @@ public class PanneauMenu extends Panneau{
 	    this.add(b1, gbc);
 	    //---------------------------------------------
 	    gbc.gridy = 2;
-	    this.add(b2, gbc);
+	    this.add(btnEdtrClnt, gbc);
 	    //---------------------------------------------
 	    gbc.gridy = 3;
-	    this.add(b3, gbc);
+	    this.add(btnSupprClnt, gbc);
 	    //---------------------------------------------
 	    gbc.gridy = 4;
-	    this.add(b4, gbc);
+	    this.add(btnAjtArtcl, gbc);
 	    //---------------------------------------------
 	    gbc.gridy = 5;
-	    this.add(b5, gbc);
+	    this.add(btnSupprArtcl, gbc);
 	    //---------------------------------------------
 	    gbc.gridy = 6;
-	    this.add(b6, gbc);
+	    this.add(btnSauvergarder, gbc);
 	    //---------------------------------------------
 	    gbc.gridy = 7;
-	    this.add(b7, gbc);
+	    this.add(btnQuit, gbc);
 
 	    
 	}

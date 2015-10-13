@@ -59,7 +59,9 @@ public abstract class PanneauAjout extends Panneau{
 	
 		this.setPreferredSize(new Dimension(340, 490));
 		this.setLayout(new GridBagLayout());
-	
+
+		scroll.setPreferredSize(new Dimension(largeur + 20, hauteur * 10));
+
 		panel.setBackground(Color.CYAN);
 		panel.setLayout(new GridBagLayout());
 	

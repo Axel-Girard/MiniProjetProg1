@@ -1,6 +1,7 @@
 package vue;
 
 import java.awt.Dimension;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -15,6 +16,14 @@ public abstract class PanneauSelectionMultiple extends PanneauSelection{
 		super(fen);
 
 		arrayCompo = new ArrayList<JCheckBox>();
+
+		gbc.gridx = 0;
+		gbc.gridy = 0;
+		gbc.gridheight = 1;
+		gbc.gridwidth = 2;
+		gbc.insets.top = 3;
+
+		pan.setLayout(new GridBagLayout());
 	}
 
 	/**
@@ -37,16 +46,15 @@ public abstract class PanneauSelectionMultiple extends PanneauSelection{
 				if(cpt > 0){
 					miseAJour();
 				}
-				interfaceRetour();
+				interfaceValider();
 			}
 		});
 
 		for(JCheckBox cb : arrayCompo){
 			cb.setPreferredSize(new Dimension(largeur-30, hauteur));
-			pan.add(cb);
+			gbc.gridy++;
+			pan.add(cb, gbc);
 		}
-
-		pan.setPreferredSize(new Dimension(largeur-20, hauteur*arrayCompo.size()));
 	}
 
 	/**
@@ -58,7 +66,7 @@ public abstract class PanneauSelectionMultiple extends PanneauSelection{
 	/**
 	 * Détermine l'interface appellée lors de la validation
 	 */
-	public void interfaceRetour(){
+	public void interfaceValider(){
 		fen.menu();
 	}
 }

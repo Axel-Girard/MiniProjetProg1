@@ -14,10 +14,13 @@ public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 	private BaseDeDonnees bdd;
 	private ArrayList<Client> clients;
 
+	// vrai s'il faut selectionner un client faux s'il faut selelection un article 
 	private boolean client;
 
 	PanneauAjoutArticle(Fenetre fen) {
 		super(fen);
+
+		bdd = BaseDeDonnees.getInstance();
 		clients = new ArrayList<Client>();
 		client = true;
 	}
@@ -65,6 +68,17 @@ public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 			for(Accessoire a : bdd.getAccessoires()){
 				arrayCompo.add(new JCheckBox(a.getIntitule() + " " + a.getPrix()));
 			}
+		}
+	}
+
+	@Override
+	public void interfaceValider(){
+		// ATTENTION client devient faux s'il faut selectionner un client
+		if(!client){
+			menu();
+		}
+		else{
+			fen.menu();
 		}
 	}
 }
