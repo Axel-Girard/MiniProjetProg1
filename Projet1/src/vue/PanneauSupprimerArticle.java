@@ -19,6 +19,21 @@ public class PanneauSupprimerArticle extends PanneauSelectionUnique{
 		numClient = 0;
 	}
 
+	public void menu(){
+		if(client){
+			super.menu();
+
+			lbl.setText("Choisissez le client à éditer");
+			btnVldr.setText("Choisir client");
+		}
+		else{
+			super.menu();
+
+			lbl.setText("Choisissez le produit");
+			btnVldr.setText("Suppr. article");
+		}
+	}
+
 	@Override
 	public void editer(int cpt) {
 		if(client){
@@ -36,41 +51,29 @@ public class PanneauSupprimerArticle extends PanneauSelectionUnique{
 		pan.repaint();
 		jrb.clear();
 		if(client){
-			lbl.setText("Choisissez le client à éditer");
-			btnVldr.setText("Choisir client");
-
 			for(Client c : fen.getClients()){
 				jrb.add(new JRadioButton(c.getNom() + " " + c.getPrenom()));
 			}
-			client = false;
 		}
 		else{
-			lbl.setText("Choisissez le produit");
-			btnVldr.setText("Suppr. article");
-
 			for(Article a : cli.getListe().getArticles()){
 				jrb.add(new JRadioButton(a.getIntitule() + " " + a.getPrix()));
 			}
-			client = true;
 		}
 	}
 
 	@Override
 	public void interfaceValider(){
-		if(!client){
+		System.out.println("iV " + client);
+		if(client){
+			client = false;
 			menu();
 		}
 		else{
+			client = true;
 			fen.getClients().set(numClient, cli);
 			fen.menu();
 		}
-	}
-
-	public void supprimer() {
-		lbl.setText("Choisissez le produit");
-		btnVldr.setText("Suppr. article");
-
-		super.menu();
 	}
 
 	// Accesseurs

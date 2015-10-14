@@ -37,8 +37,6 @@ public abstract class PanneauSelectionUnique extends PanneauSelection{
 			}
 		});
 
-		miseAJour();
-
 		for(JRadioButton rb : jrb){
 			rb.setPreferredSize(new Dimension(largeur-30, hauteur));
 			bg.add(rb);

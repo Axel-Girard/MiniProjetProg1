@@ -140,14 +140,6 @@ public class Fenetre extends JFrame{
 	}
 
 	/**
-	 * Selection un client pour supprimer un de ses articles
-	 */
-	/*public void faireSupprimer(){
-		panelSupprArtcl.supprimer();
-		cl.show(panel, listPanel[6]);
-	}*/
-		
-	/**
 	 * @return the client
 	 */
 	public ArrayList<Client> getClients() {

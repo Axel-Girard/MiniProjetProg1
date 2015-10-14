@@ -70,11 +70,11 @@ public abstract class PanneauSelection extends Panneau{
 		gbc.insets = new Insets(0, 0, 0, 0);
 		this.add(lbl, gbc);
 		//---------------------------------------------
-		gbc.gridy = 1;
+		gbc.gridy++;
 		gbc.insets.top = 3;
 		this.add(scroll, gbc);
 		//---------------------------------------------
-		gbc.gridy = 2;
+		gbc.gridy++;
 		gbc.gridx = 0;
 		gbc.gridwidth = 1;
 		this.add(btnRtr, gbc);

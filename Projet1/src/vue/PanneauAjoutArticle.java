@@ -1,5 +1,7 @@
 package vue;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JCheckBox;
@@ -21,14 +23,15 @@ public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 		super(fen);
 
 		bdd = BaseDeDonnees.getInstance();
-		clients = new ArrayList<Client>();
-		tableauEdition = new ArrayList<Integer>();
 		client = true;
 	}
 
 	public void menu(){
 		super.menu();
 		if(client){
+			clients = new ArrayList<Client>();
+			tableauEdition = new ArrayList<Integer>();
+
 			clients = fen.getClients();
 
 			lbl.setText("Selection d'un client");
@@ -37,6 +40,11 @@ public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 		else{
 			lbl.setText("Selection d'un article");
 			btnVldr.setText("Selec. article");
+			btnRtr.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent arg0) {
+					client = true;
+				}
+			});
 		}
 	}
 
@@ -79,8 +87,6 @@ public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 			client = true;
 			for(Integer i : tableauEdition){
 				fen.getClients().get(i).setListe(clients.get(i).getListe());
-				System.out.println(" tab " + clients.get(i).getListe());
-				System.out.println(" cli " + fen.getClients().get(i).getListe().getArticles().size());
 			}
 			fen.menu();
 		}
