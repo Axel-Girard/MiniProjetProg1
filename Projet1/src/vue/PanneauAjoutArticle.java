@@ -24,6 +24,12 @@ public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 
 		bdd = BaseDeDonnees.getInstance();
 		client = true;
+
+		btnRtr.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+				client = true;
+			}
+		});
 	}
 
 	public void menu(){
@@ -40,11 +46,6 @@ public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 		else{
 			lbl.setText("Selection d'un article");
 			btnVldr.setText("Selec. article");
-			btnRtr.addActionListener(new ActionListener(){
-				public void actionPerformed(ActionEvent arg0) {
-					client = true;
-				}
-			});
 		}
 	}
 
@@ -79,7 +80,6 @@ public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 
 	@Override
 	public void interfaceValider(){
-		System.out.println("iV " + client);
 		if(client){
 			client = false;
 			menu();

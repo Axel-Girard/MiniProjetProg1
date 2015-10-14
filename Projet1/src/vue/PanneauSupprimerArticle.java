@@ -1,5 +1,8 @@
 package vue;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JRadioButton;
 
 import controller.Article;
@@ -17,6 +20,13 @@ public class PanneauSupprimerArticle extends PanneauSelectionUnique{
 
 		client = true;
 		numClient = 0;
+
+
+		btnRtr.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){
+				client = true;
+			}
+		});
 	}
 
 	public void menu(){
@@ -36,7 +46,6 @@ public class PanneauSupprimerArticle extends PanneauSelectionUnique{
 
 	@Override
 	public void editer(int cpt) {
-		System.out.println("ed " + client);
 		if(client){
 			cli = fen.getClients().get(cpt);
 			numClient = cpt;
@@ -50,15 +59,15 @@ public class PanneauSupprimerArticle extends PanneauSelectionUnique{
 	public void miseAJour(){
 		pan.removeAll();
 		pan.repaint();
-		jrb.clear();
+		arrayCompo.clear();
 		if(client){
 			for(Client c : fen.getClients()){
-				jrb.add(new JRadioButton(c.getNom() + " " + c.getPrenom()));
+				arrayCompo.add(new JRadioButton(c.getNom() + " " + c.getPrenom()));
 			}
 		}
 		else{
 			for(Article a : cli.getListe().getArticles()){
-				jrb.add(new JRadioButton(a.getIntitule() + " " + a.getPrix()));
+				arrayCompo.add(new JRadioButton(a.getIntitule() + " " + a.getPrix()));
 			}
 		}
 	}
@@ -70,7 +79,6 @@ public class PanneauSupprimerArticle extends PanneauSelectionUnique{
 			menu();
 		}
 		else{
-			System.out.println("iV " + client);
 			client = true;
 			fen.getClients().set(numClient, cli);
 			fen.menu();

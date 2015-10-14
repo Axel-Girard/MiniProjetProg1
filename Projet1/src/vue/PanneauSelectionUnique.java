@@ -13,37 +13,38 @@ import controller.Client;
 @SuppressWarnings("serial")
 public abstract class PanneauSelectionUnique extends PanneauSelection{
 	protected ButtonGroup bg;
-	protected ArrayList<JRadioButton> jrb;
+	protected ArrayList<JRadioButton> arrayCompo;
 
 	PanneauSelectionUnique(Fenetre fen) {
 		super(fen);
 
 		bg = new ButtonGroup();
-		jrb = new ArrayList<JRadioButton>();
-	}
-
-	public void menu(){
-		super.menu();
+		arrayCompo = new ArrayList<JRadioButton>();
 
 		btnVldr.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
 				int cpt = 0;
-				for(JRadioButton rb : jrb){
+				for(JRadioButton rb : arrayCompo){
 					if(rb.isSelected()){
 						editer(cpt);
 					}
 					cpt++;
 				}
+				interfaceValider();
 			}
 		});
+	}
 
-		for(JRadioButton rb : jrb){
+	public void menu(){
+		super.menu();
+
+		for(JRadioButton rb : arrayCompo){
 			rb.setPreferredSize(new Dimension(largeur-30, hauteur));
 			bg.add(rb);
 			pan.add(rb);
 		}
 
-		pan.setPreferredSize(new Dimension(largeur-20, hauteur*jrb.size()));
+		pan.setPreferredSize(new Dimension(largeur-20, hauteur*arrayCompo.size()));
 	}
 
 	/**
@@ -58,9 +59,9 @@ public abstract class PanneauSelectionUnique extends PanneauSelection{
 	 */
 	public void miseAJour(){
 		pan.removeAll();
-		jrb.clear();
+		arrayCompo.clear();
 		for(Client c : fen.getClients()){
-			jrb.add(new JRadioButton(c.getNom() + " " + c.getPrenom()));
+			arrayCompo.add(new JRadioButton(c.getNom() + " " + c.getPrenom()));
 		}
 	}
 }

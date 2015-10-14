@@ -31,7 +31,6 @@ public abstract class PanneauSelectionMultiple extends PanneauSelection{
 				for(JCheckBox cb : arrayCompo){
 					if(cb.isSelected()){
 						action(cpt);
-						cpt--;
 					}
 					cpt++;
 				}
