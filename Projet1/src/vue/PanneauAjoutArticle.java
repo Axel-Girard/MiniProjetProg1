@@ -8,7 +8,6 @@ import modele.BaseDeDonnees;
 import controller.Accessoire;
 import controller.Client;
 
-
 @SuppressWarnings("serial")
 public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 	private BaseDeDonnees bdd;
@@ -28,20 +27,16 @@ public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 	}
 
 	public void menu(){
+		super.menu();
 		if(client){
-			System.out.println("Menu SC_AA");
 			clients = fen.getClients();
-			super.menu();
+
 			lbl.setText("Selection d'un client");
 			btnVldr.setText("Selec. client");
-			client = false;
 		}
 		else{
-			System.out.println("Menu SA_AA");
-			super.menu();
 			lbl.setText("Selection d'un article");
 			btnVldr.setText("Selec. article");
-			client = true;
 		}
 	}
 
@@ -76,12 +71,17 @@ public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 
 	@Override
 	public void interfaceValider(){
-		// ATTENTION client devient faux s'il faut selectionner un client
-		if(!client){
+		if(client){
+			client = false;
 			menu();
 		}
 		else{
-			fen.setClients(clients);
+			client = true;
+			for(Integer i : tableauEdition){
+				fen.getClients().get(i).setListe(clients.get(i).getListe());
+				System.out.println(" tab " + clients.get(i).getListe());
+				System.out.println(" cli " + fen.getClients().get(i).getListe().getArticles().size());
+			}
 			fen.menu();
 		}
 	}

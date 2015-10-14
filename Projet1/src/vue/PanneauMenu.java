@@ -23,7 +23,6 @@ public class PanneauMenu extends Panneau{
 	 */
 	public void menu() {
 		removeAll();
-		System.out.println("Menu G");
 		int largeur = 250;
 		int hauteur = 30;
 
@@ -76,6 +75,11 @@ public class PanneauMenu extends Panneau{
 		
 		JButton btnSupprArtcl = new JButton("Supprimer article");
 		btnSupprArtcl.setPreferredSize(new Dimension(largeur, hauteur));
+		btnSupprArtcl.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){				
+				fen.supprimerArticle();
+			}
+		});
 
 		JButton btnSauvergarder = new JButton("Sauvegarder et quitter");
 		btnSauvergarder.setPreferredSize(new Dimension(largeur, hauteur));
@@ -92,6 +96,8 @@ public class PanneauMenu extends Panneau{
 			btnEdtrClnt.setVisible(false);
 			btnSupprClnt.setVisible(false);
 			btnAjtArtcl.setVisible(false);
+			btnPayer.setVisible(false);
+			btnSupprArtcl.setVisible(false);
 		}
 		else{
 			btnEdtrClnt.setVisible(true);

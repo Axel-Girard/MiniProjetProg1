@@ -48,6 +48,11 @@ public abstract class PanneauSelection extends Panneau{
 		});
 
 		btnVldr.setPreferredSize(new Dimension(largeur/2, hauteur));
+		btnVldr.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){				
+				interfaceValider();
+			}
+		});
 
 		this.setPreferredSize(new Dimension(340, 490));
 		this.setLayout(new GridBagLayout());
@@ -82,4 +87,9 @@ public abstract class PanneauSelection extends Panneau{
 	 * Met à jour l'interface de selection
 	 */
 	public abstract void miseAJour();
+
+	/**
+	 * Détermine l'interface appellée lors de la validation
+	 */
+	public abstract void interfaceValider();
 }

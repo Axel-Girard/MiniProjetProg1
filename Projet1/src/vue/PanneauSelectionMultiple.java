@@ -32,9 +32,9 @@ public abstract class PanneauSelectionMultiple extends PanneauSelection{
 	public void menu() {
 		super.menu();
 
+		btnVldr.removeActionListener(btnVldr.getActionListeners()[0]);
 		btnVldr.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
-				System.out.println("Supprimé");
 				int cpt = 0;
 				for(JCheckBox cb : arrayCompo){
 					if(cb.isSelected()){
@@ -62,11 +62,4 @@ public abstract class PanneauSelectionMultiple extends PanneauSelection{
 	 * @param cpt l'élément à modifier
 	 */
 	public abstract void action(int cpt);
-
-	/**
-	 * Détermine l'interface appellée lors de la validation
-	 */
-	public void interfaceValider(){
-		fen.menu();
-	}
 }

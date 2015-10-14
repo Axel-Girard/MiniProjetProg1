@@ -148,10 +148,10 @@ public class ListeArticles {
 	}
 
 	//Getter Setter
-	public ArrayList<Article> getArticle() {
+	public ArrayList<Article> getArticles() {
 		return article;
 	}
-	public void setArticle(ArrayList<Article> article) {
+	public void setArticles(ArrayList<Article> article) {
 		this.article = article;
 	}
 	public boolean isEmpty(){

@@ -44,7 +44,6 @@ public abstract class PanneauAjout extends Panneau{
 		btnRtr.setPreferredSize(new Dimension(largeur/2, hauteur));
 		btnRtr.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
-				System.out.println("Valider Edit");
 				fen.menu();
 			}
 		});
@@ -108,10 +107,8 @@ public abstract class PanneauAjout extends Panneau{
 			Double.parseDouble(str);  
 		}
 		catch(NumberFormatException nfe){
-			System.out.println(false);
 			return false;  
 		}
-		System.out.println(true);
 		return true;  
 	}
 

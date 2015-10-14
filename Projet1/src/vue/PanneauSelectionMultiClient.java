@@ -5,7 +5,7 @@ import javax.swing.JCheckBox;
 import controller.Client;
 
 @SuppressWarnings("serial")
-public class PanneauSelectionMultiClient extends PanneauSelectionMultiple{
+public abstract class PanneauSelectionMultiClient extends PanneauSelectionMultiple{
 
 	PanneauSelectionMultiClient(Fenetre fen) {
 		super(fen);

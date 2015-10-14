@@ -12,7 +12,6 @@ public class PanneauPayement extends PanneauSelectionUnique{
 
 	@Override
 	public void menu(){
-		System.out.println("Payer");
 		super.menu();
 
 		lbl.setText("Choisissez le client qui va payer !");
@@ -27,6 +26,11 @@ public class PanneauPayement extends PanneauSelectionUnique{
 	@Override
 	public void editer(int cpt) {
 		fen.fairePayer(fen.getClients().get(cpt));
+		fen.menu();
+	}
+
+	@Override
+	public void interfaceValider() {
 		fen.menu();
 	}
 }

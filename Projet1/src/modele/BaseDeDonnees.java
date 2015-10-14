@@ -51,22 +51,22 @@ public class BaseDeDonnees {
 		compatibilité3.add(lg);
 
 		Chargeur c1 = new Chargeur(123, "chargeur universel", (float) 50.0, Type.secteur);
-		Chargeur c2 = new Chargeur(123, "chargeur ifon", (float) 50.0, Type.secteur);
-		Chargeur c3 = new Chargeur(123, "chargeur nonIfon", (float) 50.0, Type.secteur);
+		Chargeur c2 = new Chargeur(124, "chargeur ifon", (float) 500.99, Type.secteur);
+		Chargeur c3 = new Chargeur(125, "chargeur nonIfon", (float) 15.0, Type.secteur);
 		c1.setMarque(compatibilité1);
 		c2.setMarque(compatibilité2);
 		c3.setMarque(compatibilité3);
 
-		Coque co1 = new Coque(123, "chargeur universel", (float) 50.0, "rouge");
-		Coque co2 = new Coque(123, "chargeur ifon", (float) 50.0, "vert");
-		Coque co3 = new Coque(123, "chargeur nonIfon", (float) 50.0, "bleu");
+		Coque co1 = new Coque(126, "coque universel", (float) 30.0, "rouge");
+		Coque co2 = new Coque(127, "coque ifon", (float) 22.99, "vert");
+		Coque co3 = new Coque(128, "coque nonIfon", (float) 20.0, "bleu");
 		co1.setMarque(compatibilité1);
 		co2.setMarque(compatibilité2);
 		co3.setMarque(compatibilité3);
 
-		Cordon cor1 = new Cordon(123, "chargeur universel", (float) 50.0, (float) 12);
-		Cordon cor2 = new Cordon(123, "chargeur ifon", (float) 50.0,  (float) 15);
-		Cordon cor3 = new Cordon(123, "chargeur nonIfon", (float) 50.0,  (float) 25);
+		Cordon cor1 = new Cordon(129, "cordon universel", (float) 12.0, (float) 12);
+		Cordon cor2 = new Cordon(130, "cordon ifon", (float) 40.0,  (float) 15);
+		Cordon cor3 = new Cordon(131, "cordon nonIfon", (float) 10.0,  (float) 25);
 		cor1.setMarque(compatibilité1);
 		cor2.setMarque(compatibilité2);
 		cor3.setMarque(compatibilité3);

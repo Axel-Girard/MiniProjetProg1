@@ -1,6 +1,7 @@
 package vue;
 
 import java.awt.CardLayout;
+import java.awt.Dimension;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -22,9 +23,11 @@ public class Fenetre extends JFrame{
 	private PanneauSupprimerClient panelSuppClnt;
 	private PanneauAjoutArticle panelAjtArtcl;
 	private PanneauPayement panelPayer;
+	private PanneauSupprimerArticle panelSupprArtcl;
 
 	private CardLayout cl;
-	private String[] listPanel = {"MenuGeneral", "AjoutClient", "EditerClient", "SupprimerClient", "AjouterArticle", "FairePayer"};
+	private String[] listPanel = {"MenuGeneral", "AjoutClient", "EditerClient",
+			"SupprimerClient", "AjouterArticle", "FairePayer", "Supprimer"};
 	private ArrayList<Client> clients;
 
 	public Fenetre(ArrayList<Client> client) {
@@ -40,11 +43,12 @@ public class Fenetre extends JFrame{
 		panelSuppClnt = new PanneauSupprimerClient(this);
 		panelAjtArtcl = new PanneauAjoutArticle(this);
 		panelPayer = new PanneauPayement(this);
+		panelSupprArtcl = new PanneauSupprimerArticle(this);
 
 		cl = new CardLayout();
 
 		this.setTitle("Magasin du futur de l'espôce !");
-		this.setSize(350, 500);
+		this.setMinimumSize(new Dimension(350, 500));
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
@@ -58,6 +62,7 @@ public class Fenetre extends JFrame{
 		panel.add(panelSuppClnt, listPanel[3]);
 		panel.add(panelAjtArtcl, listPanel[4]);
 		panel.add(panelPayer, listPanel[5]);
+		panel.add(panelSupprArtcl, listPanel[6]);
 	}
 
 	/**
@@ -125,6 +130,22 @@ public class Fenetre extends JFrame{
 		panelPayer.payer(c);
 		cl.show(panel, listPanel[5]);
 	}
+
+	/**
+	 * Selection un client pour supprimer un de ses articles
+	 */
+	public void supprimerArticle(){
+		panelSupprArtcl.menu();
+		cl.show(panel, listPanel[6]);
+	}
+
+	/**
+	 * Selection un client pour supprimer un de ses articles
+	 */
+	/*public void faireSupprimer(){
+		panelSupprArtcl.supprimer();
+		cl.show(panel, listPanel[6]);
+	}*/
 		
 	/**
 	 * @return the client

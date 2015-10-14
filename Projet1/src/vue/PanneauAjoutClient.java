@@ -160,8 +160,6 @@ public class PanneauAjoutClient extends PanneauAjout{
 	 * Affiche le menu de base
 	 */
 	public void menu() {
-		System.out.println("Menu AC");
-
 		initialiserChamps();
 
 		lbl.setFont(police);
@@ -189,7 +187,6 @@ public class PanneauAjoutClient extends PanneauAjout{
 	 * @param c le Client à éditer
 	 */
 	public void editer(){
-		System.out.println("Edition C");
 		lbl.setText("Modifier client");
 
 		initialiserChamps();
@@ -234,14 +231,12 @@ public class PanneauAjoutClient extends PanneauAjout{
 							if(jtfNum.getText().length() != 0){
 								if(jtfMarque.getText().length() != 0){
 									if(creer){
-										System.out.println("données OK");
 										fen.getClients().add(new Client(jtfNom.getText(), jtfPrenom.getText(),
 												new Telephone(Integer.parseInt(jtfRef.getText()), jtfIntitule.getText(),
 												Float.parseFloat(jtfPrix.getText()), jtfNum.getText(), null, new Marque(jtfMarque.getText()))));
 										fen.menu();
 									}
 									else{
-										System.out.println("Valider Edit");
 										c.setNom(jtfNom.getText());
 										c.setPrenom(jtfPrenom.getText());
 										c.getTel().setRef(Integer.parseInt(jtfRef.getText()));

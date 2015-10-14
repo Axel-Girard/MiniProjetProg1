@@ -27,7 +27,6 @@ public abstract class PanneauSelectionUnique extends PanneauSelection{
 
 		btnVldr.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
-				System.out.println("Edité");
 				int cpt = 0;
 				for(JRadioButton rb : jrb){
 					if(rb.isSelected()){

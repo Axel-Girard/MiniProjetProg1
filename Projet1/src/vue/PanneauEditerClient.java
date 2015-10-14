@@ -2,6 +2,7 @@ package vue;
 
 @SuppressWarnings("serial")
 public class PanneauEditerClient extends PanneauSelectionUnique{
+	private int cptClient;
 
 	PanneauEditerClient(Fenetre fen){
 		super(fen);
@@ -11,7 +12,6 @@ public class PanneauEditerClient extends PanneauSelectionUnique{
 	 * Affiche une liste pour selectionner un client
 	 */
 	public void menu() {
-		System.out.println("Menu EC");
 		super.menu();
 
 		lbl.setText("Choisissez le client à éditer");
@@ -19,6 +19,12 @@ public class PanneauEditerClient extends PanneauSelectionUnique{
 	}
 
 	public void editer(int cpt) {
+		cptClient = cpt;
 		fen.editerClient(fen.getClients().get(cpt));
+	}
+
+	@Override
+	public void interfaceValider() {
+		editer(cptClient);
 	}
 }
