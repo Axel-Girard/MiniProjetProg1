@@ -24,15 +24,7 @@ public abstract class PanneauSelectionMultiple extends PanneauSelection{
 		gbc.insets.top = 3;
 
 		pan.setLayout(new GridBagLayout());
-	}
 
-	/**
-	 * Affiche une liste pour selectionner un client
-	 */
-	public void menu() {
-		super.menu();
-
-		btnVldr.removeActionListener(btnVldr.getActionListeners()[0]);
 		btnVldr.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
 				int cpt = 0;
@@ -49,6 +41,13 @@ public abstract class PanneauSelectionMultiple extends PanneauSelection{
 				interfaceValider();
 			}
 		});
+	}
+
+	/**
+	 * Affiche une liste pour selectionner un client
+	 */
+	public void menu() {
+		super.menu();
 
 		for(JCheckBox cb : arrayCompo){
 			cb.setPreferredSize(new Dimension(largeur-30, hauteur));

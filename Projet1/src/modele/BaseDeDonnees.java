@@ -40,36 +40,36 @@ public class BaseDeDonnees {
 		Marque ifon = new Marque("ifon");
 		Marque lg = new Marque("LG");
 
-		HashSet<Marque> compatibilité1 = new HashSet<Marque>();
-		compatibilité1.add(samsung);
-		compatibilité1.add(ifon);
-		compatibilité1.add(lg);
-		HashSet<Marque> compatibilité2 = new HashSet<Marque>();
-		compatibilité2.add(ifon);
-		HashSet<Marque> compatibilité3 = new HashSet<Marque>();
-		compatibilité3.add(samsung);
-		compatibilité3.add(lg);
+		HashSet<Marque> compatibilite1 = new HashSet<Marque>();
+		compatibilite1.add(samsung);
+		compatibilite1.add(ifon);
+		compatibilite1.add(lg);
+		HashSet<Marque> compatibilite2 = new HashSet<Marque>();
+		compatibilite2.add(ifon);
+		HashSet<Marque> compatibilite3 = new HashSet<Marque>();
+		compatibilite3.add(samsung);
+		compatibilite3.add(lg);
 
 		Chargeur c1 = new Chargeur(123, "chargeur universel", (float) 50.0, Type.secteur);
 		Chargeur c2 = new Chargeur(124, "chargeur ifon", (float) 500.99, Type.secteur);
 		Chargeur c3 = new Chargeur(125, "chargeur nonIfon", (float) 15.0, Type.secteur);
-		c1.setMarque(compatibilité1);
-		c2.setMarque(compatibilité2);
-		c3.setMarque(compatibilité3);
+		c1.setMarque(compatibilite1);
+		c2.setMarque(compatibilite2);
+		c3.setMarque(compatibilite3);
 
 		Coque co1 = new Coque(126, "coque universel", (float) 30.0, "rouge");
 		Coque co2 = new Coque(127, "coque ifon", (float) 22.99, "vert");
 		Coque co3 = new Coque(128, "coque nonIfon", (float) 20.0, "bleu");
-		co1.setMarque(compatibilité1);
-		co2.setMarque(compatibilité2);
-		co3.setMarque(compatibilité3);
+		co1.setMarque(compatibilite1);
+		co2.setMarque(compatibilite2);
+		co3.setMarque(compatibilite3);
 
 		Cordon cor1 = new Cordon(129, "cordon universel", (float) 12.0, (float) 12);
 		Cordon cor2 = new Cordon(130, "cordon ifon", (float) 40.0,  (float) 15);
 		Cordon cor3 = new Cordon(131, "cordon nonIfon", (float) 10.0,  (float) 25);
-		cor1.setMarque(compatibilité1);
-		cor2.setMarque(compatibilité2);
-		cor3.setMarque(compatibilité3);
+		cor1.setMarque(compatibilite1);
+		cor2.setMarque(compatibilite2);
+		cor3.setMarque(compatibilite3);
 
 		accessoires.add(c1);
 		accessoires.add(c2);

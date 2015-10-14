@@ -36,6 +36,7 @@ public class PanneauSupprimerArticle extends PanneauSelectionUnique{
 
 	@Override
 	public void editer(int cpt) {
+		System.out.println("ed " + client);
 		if(client){
 			cli = fen.getClients().get(cpt);
 			numClient = cpt;
@@ -64,12 +65,12 @@ public class PanneauSupprimerArticle extends PanneauSelectionUnique{
 
 	@Override
 	public void interfaceValider(){
-		System.out.println("iV " + client);
 		if(client){
 			client = false;
 			menu();
 		}
 		else{
+			System.out.println("iV " + client);
 			client = true;
 			fen.getClients().set(numClient, cli);
 			fen.menu();

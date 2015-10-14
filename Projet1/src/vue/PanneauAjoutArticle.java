@@ -79,6 +79,7 @@ public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 
 	@Override
 	public void interfaceValider(){
+		System.out.println("iV " + client);
 		if(client){
 			client = false;
 			menu();

@@ -7,26 +7,26 @@ import controller.Client;
 import controller.Telephone;
 
 public class Vendeur {
-	private ArrayList<Client> client;
+	private ArrayList<Client> clients;
 
 	public Vendeur(){
 		
-		client = new ArrayList<Client>();
+		clients = new ArrayList<Client>();
 		
-		Fenetre frame = new Fenetre(client);
+		Fenetre frame = new Fenetre(clients);
 		frame.menu();
 	}
 
 	// Methodes
 	public void ajouterClient(String nom, String prenom, Telephone tel){
-		client.add(new Client(nom, prenom, tel));
+		clients.add(new Client(nom, prenom, tel));
 	}
 
 	//Accesseurs
-	public ArrayList<Client> getClient() {
-		return client;
+	public ArrayList<Client> getClients() {
+		return clients;
 	}
-	public void setClient(ArrayList<Client> client) {
-		this.client = client;
+	public void setClients(ArrayList<Client> client) {
+		this.clients = client;
 	}
 }
