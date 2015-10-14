@@ -25,7 +25,7 @@ public class PanneauPayement extends PanneauSelectionUnique{
 
 		lblPrix.setVisible(false);
 
-		scroll.add(lblPrix);
+		pan.add(lblPrix);
 	}
 
 	public void payer(Client c){
@@ -43,6 +43,6 @@ public class PanneauPayement extends PanneauSelectionUnique{
 	@Override
 	public void interfaceValider() {
 		lblPrix.setVisible(true);
-		lblPrix.setText(nom + " : " +String.valueOf(client));
+		lblPrix.setText(nom + " donne :  " +String.valueOf(client));
 	}
 }

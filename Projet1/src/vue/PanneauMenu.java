@@ -65,7 +65,7 @@ public class PanneauMenu extends Panneau{
 			}
 		});
 
-		JButton btnPayer = new JButton("Give me some money !");
+		JButton btnPayer = new JButton("Give me my money !");
 		btnPayer.setPreferredSize(new Dimension(largeur, hauteur));
 		btnPayer.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){				
@@ -84,7 +84,8 @@ public class PanneauMenu extends Panneau{
 		JButton btnSauvergarder = new JButton("Sauvegarder et quitter");
 		btnSauvergarder.setPreferredSize(new Dimension(largeur, hauteur));
 		btnSauvergarder.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent event){				
+			public void actionPerformed(ActionEvent event){
+				
 				System.out.println("A faire en dernier");
 			}
 		});

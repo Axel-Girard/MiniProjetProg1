@@ -17,7 +17,6 @@ public class Client {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.tel = tel;
-		System.out.println("Client créer " + nom + " " + prenom);
 	}
 
 	// methodes

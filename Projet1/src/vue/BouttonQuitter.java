@@ -14,7 +14,6 @@ public class BouttonQuitter extends JButton implements ActionListener{
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
-		System.out.println("Exit");
 		System.exit(0);
 	}
 }
