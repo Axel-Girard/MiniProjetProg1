@@ -1,6 +1,5 @@
 package vue;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -39,8 +38,6 @@ public abstract class PanneauAjout extends Panneau{
 
 		gbc = new GridBagConstraints();
 
-		this.setBackground(Color.GREEN);
-
 		actionListener();
 
 		btnRtr = new JButton("Retour");
@@ -62,7 +59,6 @@ public abstract class PanneauAjout extends Panneau{
 
 		scroll.setPreferredSize(new Dimension(largeur + 20, hauteur * 10));
 
-		panel.setBackground(Color.CYAN);
 		panel.setLayout(new GridBagLayout());
 	
 		//On positionne la case de départ du composant et sa taille

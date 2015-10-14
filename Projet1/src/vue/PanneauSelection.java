@@ -1,6 +1,5 @@
 package vue;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -55,9 +54,6 @@ public abstract class PanneauSelection extends Panneau{
 
 		miseAJour();
 
-		pan.setBackground(Color.CYAN);
-
-		scroll.setBackground(Color.GRAY);
 		scroll.setPreferredSize(new Dimension(largeur + 20, hauteur * 8));
 
 		//On positionne la case de départ du composant et sa taille

@@ -1,6 +1,5 @@
 package vue;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,8 +17,6 @@ public abstract class PanneauSelectionUnique extends PanneauSelection{
 
 	PanneauSelectionUnique(Fenetre fen) {
 		super(fen);
-
-		this.setBackground(Color.RED);
 
 		bg = new ButtonGroup();
 		jrb = new ArrayList<JRadioButton>();

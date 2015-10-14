@@ -1,6 +1,5 @@
 package vue;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -17,8 +16,6 @@ public class PanneauMenu extends Panneau{
 
 	public PanneauMenu(Fenetre fen){
 		super(fen);
-
-		this.setBackground(Color.ORANGE);
 	}
 
 	/**

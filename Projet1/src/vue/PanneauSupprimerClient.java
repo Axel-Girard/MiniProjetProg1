@@ -1,14 +1,10 @@
 package vue;
 
-import java.awt.Color;
-
 @SuppressWarnings("serial")
 public class PanneauSupprimerClient extends PanneauSelectionMultiClient{
 
 	PanneauSupprimerClient(Fenetre fen){
 		super(fen);
-
-		this.setBackground(Color.DARK_GRAY);
 	}
 
 	/**
