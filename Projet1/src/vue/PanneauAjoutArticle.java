@@ -13,6 +13,7 @@ import controller.Client;
 public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 	private BaseDeDonnees bdd;
 	private ArrayList<Client> clients;
+	private ArrayList<Integer> tableauEdition;
 
 	// vrai s'il faut selectionner un client faux s'il faut selelection un article 
 	private boolean client;
@@ -22,12 +23,14 @@ public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 
 		bdd = BaseDeDonnees.getInstance();
 		clients = new ArrayList<Client>();
+		tableauEdition = new ArrayList<Integer>();
 		client = true;
 	}
 
 	public void menu(){
 		if(client){
 			System.out.println("Menu SC_AA");
+			clients = fen.getClients();
 			super.menu();
 			lbl.setText("Selection d'un client");
 			btnVldr.setText("Selec. client");
@@ -45,8 +48,8 @@ public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 	@Override
 	public void action(int cpt) {
 		if(client){
-			if(fen.getClient().size() >= cpt + 1){
-				clients.add(fen.getClient().get(cpt));
+			if(fen.getClients().size() >= cpt + 1){
+				tableauEdition.add(cpt);
 			}
 		}
 		else{
@@ -78,6 +81,7 @@ public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 			menu();
 		}
 		else{
+			fen.setClients(clients);
 			fen.menu();
 		}
 	}

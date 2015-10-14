@@ -69,6 +69,14 @@ public class PanneauMenu extends Panneau{
 			}
 		});
 
+		JButton btnPayer = new JButton("Give me some money !");
+		btnPayer.setPreferredSize(new Dimension(largeur, hauteur));
+		btnPayer.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){				
+				fen.payer();
+			}
+		});
+		
 		JButton btnSupprArtcl = new JButton("Supprimer article");
 		btnSupprArtcl.setPreferredSize(new Dimension(largeur, hauteur));
 
@@ -83,19 +91,20 @@ public class PanneauMenu extends Panneau{
 		BouttonQuitter btnQuit = new BouttonQuitter("Quitter sans sauvegarder");
 		btnQuit.setPreferredSize(new Dimension(largeur, hauteur));
 
-		if(fen.getClient().isEmpty()){
+		if(fen.getClients().isEmpty()){
 			btnEdtrClnt.setVisible(false);
 			btnSupprClnt.setVisible(false);
 			btnAjtArtcl.setVisible(false);
-			btnSupprArtcl.setVisible(false);
 		}
 		else{
 			btnEdtrClnt.setVisible(true);
 			btnSupprClnt.setVisible(true);
 			btnAjtArtcl.setVisible(true);
 			if(fen.isArticle()){
+				btnPayer.setVisible(true);
 				btnSupprArtcl.setVisible(true);
 			}else{
+				btnPayer.setVisible(false);
 				btnSupprArtcl.setVisible(false);
 			}
 		}
@@ -117,35 +126,29 @@ public class PanneauMenu extends Panneau{
 	    gbc.insets = new Insets(0, 0, 0, 0);
 	    this.add(lbl, gbc);
 	    //---------------------------------------------
-	    gbc.gridy = 1;
+	    gbc.gridy++;
 	    gbc.insets.top = 3;
 	    this.add(b1, gbc);
 	    //---------------------------------------------
-	    gbc.gridy = 2;
+	    gbc.gridy++;
 	    this.add(btnEdtrClnt, gbc);
 	    //---------------------------------------------
-	    gbc.gridy = 3;
+	    gbc.gridy++;
 	    this.add(btnSupprClnt, gbc);
 	    //---------------------------------------------
-	    gbc.gridy = 4;
+	    gbc.gridy++;
 	    this.add(btnAjtArtcl, gbc);
 	    //---------------------------------------------
-	    gbc.gridy = 5;
+	    gbc.gridy++;
+	    this.add(btnPayer, gbc);
+	    //---------------------------------------------
+	    gbc.gridy++;
 	    this.add(btnSupprArtcl, gbc);
 	    //---------------------------------------------
-	    gbc.gridy = 6;
+	    gbc.gridy++;
 	    this.add(btnSauvergarder, gbc);
 	    //---------------------------------------------
-	    gbc.gridy = 7;
+	    gbc.gridy++;
 	    this.add(btnQuit, gbc);
-
-	    
 	}
-
-	/**
-	 * Dessine un objet graphique à chaque fois que le panneau est affiché
-	 */
-	/*public void paintComponent(Graphics g){
-		g.fillOval(20, 20, 75, 75);
-	}*/ 
 }

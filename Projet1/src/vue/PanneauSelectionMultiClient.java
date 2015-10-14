@@ -24,7 +24,7 @@ public class PanneauSelectionMultiClient extends PanneauSelectionMultiple{
 		pan.removeAll();
 		pan.repaint();
 		arrayCompo.clear();
-		for(Client c : fen.getClient()){
+		for(Client c : fen.getClients()){
 			arrayCompo.add(new JCheckBox(c.getNom() + " " + c.getPrenom()));
 		}
 	}

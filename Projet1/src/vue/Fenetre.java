@@ -21,13 +21,14 @@ public class Fenetre extends JFrame{
 	private PanneauEditerClient panelEdtClnt;
 	private PanneauSupprimerClient panelSuppClnt;
 	private PanneauAjoutArticle panelAjtArtcl;
+	private PanneauPayement panelPayer;
 
 	private CardLayout cl;
-	private String[] listPanel = {"MenuGeneral", "AjoutClient", "EditerClient", "SupprimerClient", "AjouterArticle"};
-	private ArrayList<Client> client;
+	private String[] listPanel = {"MenuGeneral", "AjoutClient", "EditerClient", "SupprimerClient", "AjouterArticle", "FairePayer"};
+	private ArrayList<Client> clients;
 
 	public Fenetre(ArrayList<Client> client) {
-		this.client = client;
+		this.clients = client;
 
 		Telephone tel = new Telephone(12, "Samsung wave 1", (float) 125.50, "0612538967", new Operateur("Bouigue"), new Marque("Samsung"));
 		client.add(new Client("Johston", "Waverly", tel));		// A SUPPRIMER !!!!!!!!! (et au dessus aussi)
@@ -38,6 +39,7 @@ public class Fenetre extends JFrame{
 		panelEdtClnt = new PanneauEditerClient(this);
 		panelSuppClnt = new PanneauSupprimerClient(this);
 		panelAjtArtcl = new PanneauAjoutArticle(this);
+		panelPayer = new PanneauPayement(this);
 
 		cl = new CardLayout();
 
@@ -55,6 +57,7 @@ public class Fenetre extends JFrame{
 		panel.add(panelEdtClnt, listPanel[2]);
 		panel.add(panelSuppClnt, listPanel[3]);
 		panel.add(panelAjtArtcl, listPanel[4]);
+		panel.add(panelPayer, listPanel[5]);
 	}
 
 	/**
@@ -108,24 +111,40 @@ public class Fenetre extends JFrame{
 	}
 
 	/**
+	 * Selection un client à faire payer un client
+	 */
+	public void payer() {
+		panelPayer.menu();
+		cl.show(panel, listPanel[5]);
+	}
+
+	/**
+	 * Fait payer un client
+	 */
+	public void fairePayer(Client c) {
+		panelPayer.payer(c);
+		cl.show(panel, listPanel[5]);
+	}
+		
+	/**
 	 * @return the client
 	 */
-	public ArrayList<Client> getClient() {
-		return client;
+	public ArrayList<Client> getClients() {
+		return clients;
 	}
 
 	/**
 	 * @param client le Client à mettre à jour
 	 */
-	public void setClient(ArrayList<Client> client) {
-		this.client = client;
+	public void setClients(ArrayList<Client> client) {
+		this.clients = client;
 	}
 
 	/**
 	 * @return true si un des clients à au moins un article dans son panier
 	 */
 	public boolean isArticle(){
-		for(Client c : client){
+		for(Client c : clients){
 			if(!c.getListe().isEmpty()){
 				return true;
 			}

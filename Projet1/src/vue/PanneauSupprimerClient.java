@@ -23,8 +23,8 @@ public class PanneauSupprimerClient extends PanneauSelectionMultiClient{
 
 	@Override
 	public void action(int cpt) {
-		if(!fen.getClient().isEmpty()){
-			fen.getClient().remove(fen.getClient().get(cpt));
+		if(!fen.getClients().isEmpty()){
+			fen.getClients().remove(fen.getClients().get(cpt));
 		}
 	}
 }

@@ -77,6 +77,10 @@ public class Client {
 		this.tel = tel;
 	}
 
+	public float getTotalAchat(){
+		return liste.totalListe();
+	}
+
 	// toString
 	public String toString() {
 		return nom + ", " + prenom;

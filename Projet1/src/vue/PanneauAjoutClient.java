@@ -235,7 +235,7 @@ public class PanneauAjoutClient extends PanneauAjout{
 								if(jtfMarque.getText().length() != 0){
 									if(creer){
 										System.out.println("données OK");
-										fen.getClient().add(new Client(jtfNom.getText(), jtfPrenom.getText(),
+										fen.getClients().add(new Client(jtfNom.getText(), jtfPrenom.getText(),
 												new Telephone(Integer.parseInt(jtfRef.getText()), jtfIntitule.getText(),
 												Float.parseFloat(jtfPrix.getText()), jtfNum.getText(), null, new Marque(jtfMarque.getText()))));
 										fen.menu();

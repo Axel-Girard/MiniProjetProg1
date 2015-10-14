@@ -1,9 +1,5 @@
 package vue;
 
-import javax.swing.JRadioButton;
-
-import controller.Client;
-
 @SuppressWarnings("serial")
 public class PanneauEditerClient extends PanneauSelectionUnique{
 
@@ -22,18 +18,7 @@ public class PanneauEditerClient extends PanneauSelectionUnique{
 		btnVldr.setText("Editer Client");
 	}
 
-	/**
-	 * Met à jour l'interface de selection des clients
-	 */
-	public void miseAJour(){
-		pan.removeAll();
-		jrb.clear();
-		for(Client c : fen.getClient()){
-			jrb.add(new JRadioButton(c.getNom() + " " + c.getPrenom()));
-		}
-	}
-
 	public void editer(int cpt) {
-		fen.editerClient(fen.getClient().get(cpt));
+		fen.editerClient(fen.getClients().get(cpt));
 	}
 }

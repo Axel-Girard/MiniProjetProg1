@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 
+import controller.Client;
+
 @SuppressWarnings("serial")
 public abstract class PanneauSelectionUnique extends PanneauSelection{
 	protected ButtonGroup bg;
@@ -55,4 +57,16 @@ public abstract class PanneauSelectionUnique extends PanneauSelection{
 	 * @param cpt l'élément à modifier
 	 */
 	public abstract void editer(int cpt);
+
+
+	/**
+	 * Met à jour l'interface de selection des clients
+	 */
+	public void miseAJour(){
+		pan.removeAll();
+		jrb.clear();
+		for(Client c : fen.getClients()){
+			jrb.add(new JRadioButton(c.getNom() + " " + c.getPrenom()));
+		}
+	}
 }
