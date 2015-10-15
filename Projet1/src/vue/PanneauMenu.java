@@ -89,8 +89,7 @@ public class PanneauMenu extends Panneau {
 		btnSauvergarder.setPreferredSize(new Dimension(largeur, hauteur));
 		btnSauvergarder.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
-				//Magasin.sauvegarder();
-				//System.out.println("A faire en dernier");
+				fen.getVendeur().sauvegarder();
 			}
 		});
 

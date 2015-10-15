@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import modele.Vendeur;
 import controller.Client;
 import controller.Marque;
 import controller.Operateur;
@@ -34,8 +35,11 @@ public class Fenetre extends JFrame {
 			"SupprimerClient", "AjouterArticle", "FairePayer", "Supprimer"};
 	private ArrayList<Client> clients;
 
-	public Fenetre(ArrayList<Client> client) {
+	private Vendeur vendeur;
+
+	public Fenetre(ArrayList<Client> client, Vendeur vendeur) {
 		this.clients = client;
+		this.vendeur = vendeur;
 
 		Telephone tel = new Telephone(12, "Samsung wave 1", (float) 125.50, "0612538967", new Operateur("Bouigue"), new Marque("Samsung"));
 		client.add(new Client("Johston", "Waverly", tel));		// A SUPPRIMER !!!!!!!!! (et au dessus aussi)
@@ -155,6 +159,13 @@ public class Fenetre extends JFrame {
 	 */
 	public void setClients(ArrayList<Client> client) {
 		this.clients = client;
+	}
+	/**
+	 * retourn le vendeur qui a instancié la fenetre
+	 * @return Vendeur
+	 */
+	public Vendeur getVendeur() {
+		return vendeur;
 	}
 
 	/**
