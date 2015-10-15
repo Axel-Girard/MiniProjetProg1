@@ -18,7 +18,8 @@ import javax.swing.JScrollPane;
  * 
  */
 @SuppressWarnings("serial")
-public abstract class PanneauSelection extends Panneau{
+public abstract class PanneauSelection extends Panneau {
+
 	protected JPanel pan;
 	protected JScrollPane scroll;
 	protected JButton btnVldr;

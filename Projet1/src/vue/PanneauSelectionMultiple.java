@@ -13,7 +13,8 @@ import javax.swing.JCheckBox;
  * 
  */
 @SuppressWarnings("serial")
-public abstract class PanneauSelectionMultiple extends PanneauSelection{
+public abstract class PanneauSelectionMultiple extends PanneauSelection {
+
 	protected ArrayList<JCheckBox> arrayCompo;
 
 	PanneauSelectionMultiple(Fenetre fen) {

@@ -19,7 +19,8 @@ import controller.Client;
  * 
  */
 @SuppressWarnings("serial")
-public abstract class PanneauAjout extends Panneau{
+public abstract class PanneauAjout extends Panneau {
+
 	protected JScrollPane scroll;
 	protected JPanel panel;
 

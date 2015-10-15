@@ -17,7 +17,7 @@ import controller.Telephone;
  * 
  */
 @SuppressWarnings("serial")
-public class Fenetre extends JFrame{
+public class Fenetre extends JFrame {
 
 	private JPanel panel;
 

@@ -11,13 +11,15 @@ import controller.Telephone;
  * 
  */
 public class Vendeur {
+
 	private ArrayList<Client> clients;
+	private Fenetre frame;
 
 	public Vendeur(){
 		
 		clients = new ArrayList<Client>();
 		
-		Fenetre frame = new Fenetre(clients);
+		frame = new Fenetre(clients);
 		frame.menu();
 	}
 

@@ -17,7 +17,7 @@ import controller.Telephone;
  * 
  */
 @SuppressWarnings("serial")
-public class PanneauAjoutClient extends PanneauAjout{
+public class PanneauAjoutClient extends PanneauAjout {
 	private JLabel lblClient;
 	private JLabel lblNom;
 	private final JTextField jtfNom;

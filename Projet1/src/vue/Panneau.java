@@ -9,6 +9,7 @@ import javax.swing.JPanel;
  */
 @SuppressWarnings("serial")
 public abstract class Panneau extends JPanel{
+
 	protected JLabel lbl;
 	protected Fenetre fen;
 	protected int largeur = 250;

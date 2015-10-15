@@ -1,10 +1,12 @@
 package controller;
 
+
 /**
  * @authors Ludovic CHEVRAUX & Axel GIRARD
  * 
  */
 public class Coque extends Accessoire {
+
 	private String couleur;
 
 	public String getCouleur() {

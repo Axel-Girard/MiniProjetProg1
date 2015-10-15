@@ -16,7 +16,7 @@ import javax.swing.JLabel;
  * 
  */
 @SuppressWarnings("serial")
-public class PanneauMenu extends Panneau{
+public class PanneauMenu extends Panneau {
 
 	public PanneauMenu(Fenetre fen){
 		super(fen);
@@ -89,8 +89,8 @@ public class PanneauMenu extends Panneau{
 		btnSauvergarder.setPreferredSize(new Dimension(largeur, hauteur));
 		btnSauvergarder.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
-				
-				System.out.println("A faire en dernier");
+				//Magasin.sauvegarder();
+				//System.out.println("A faire en dernier");
 			}
 		});
 

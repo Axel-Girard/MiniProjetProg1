@@ -15,7 +15,8 @@ import controller.Client;
  * 
  */
 @SuppressWarnings("serial")
-public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
+public class PanneauAjoutArticle extends PanneauSelectionMultiClient {
+
 	private BaseDeDonnees bdd;
 	private ArrayList<Client> clients;
 	private ArrayList<Integer> tableauEdition;

@@ -13,7 +13,8 @@ import controller.Client;
  * 
  */
 @SuppressWarnings("serial")
-public class PanneauSupprimerArticle extends PanneauSelectionUnique{
+public class PanneauSupprimerArticle extends PanneauSelectionUnique {
+
 	private Client cli;
 	private int numClient; 
 

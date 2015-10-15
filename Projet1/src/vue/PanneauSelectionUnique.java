@@ -15,7 +15,8 @@ import controller.Client;
  * 
  */
 @SuppressWarnings("serial")
-public abstract class PanneauSelectionUnique extends PanneauSelection{
+public abstract class PanneauSelectionUnique extends PanneauSelection {
+
 	protected ButtonGroup bg;
 	protected ArrayList<JRadioButton> arrayCompo;
 

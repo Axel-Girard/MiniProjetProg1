@@ -16,6 +16,7 @@ import controller.Type;
  * 
  */
 public class BaseDeDonnees {
+
 	private static BaseDeDonnees instance = null;
 
 	private ArrayList<Accessoire> accessoires;

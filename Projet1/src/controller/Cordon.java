@@ -1,10 +1,12 @@
 package controller;
 
+
 /**
  * @authors Ludovic CHEVRAUX & Axel GIRARD
  * 
  */
 public class Cordon extends Accessoire {
+
 	private float taille;
 
 	public float getTaille() {

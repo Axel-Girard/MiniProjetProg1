@@ -10,7 +10,8 @@ import controller.ListeArticles;
  * 
  */
 @SuppressWarnings("serial")
-public class PanneauPayement extends PanneauSelectionUnique{
+public class PanneauPayement extends PanneauSelectionUnique {
+
 	private float client;
 	private String nom;
 

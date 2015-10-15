@@ -1,10 +1,12 @@
 package controller;
 
+
 /**
  * @authors Ludovic CHEVRAUX & Axel GIRARD
  * 
  */
 public class Marque {
+
 	private String nom;
 
 	public Marque(String nom){

@@ -10,6 +10,7 @@ import java.util.Collections;
  * 
  */
 public class ListeArticles {
+
 	private ArticleCompareRef compareRef;
 	private ArticleCompareIntitule compareInt;
 	private ArticleComparePrix comparePri;

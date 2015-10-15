@@ -5,7 +5,8 @@ import java.util.HashSet;
  * @authors Ludovic CHEVRAUX & Axel GIRARD
  * 
  */
-public abstract class Accessoire extends Article{
+public abstract class Accessoire extends Article {
+
 	protected  HashSet<Marque> marque;
 	public Accessoire(int ref, String intitule, float prix){
 		super(ref, intitule, prix);

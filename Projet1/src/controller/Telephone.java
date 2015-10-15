@@ -1,10 +1,11 @@
 package controller;
 
+
 /**
  * @authors Ludovic CHEVRAUX & Axel GIRARD
  * 
  */
-public class Telephone extends Article{
+public class Telephone extends Article {
 	private String numero;
 	private Operateur operateur;
 	private Marque marque;
