@@ -5,13 +5,10 @@ package modele;
  * 
  */
 public class Magasin {
-
 	private static Vendeur vendeur;
 
 	// main de l'application
 	public static void main(String[] args) {
-		System.out.println("Welcome in the magasin of the future of demain !");
-
 		vendeur = new Vendeur();
 	}
 

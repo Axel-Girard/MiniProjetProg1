@@ -41,9 +41,6 @@ public class Fenetre extends JFrame {
 		this.clients = client;
 		this.vendeur = vendeur;
 
-		Telephone tel = new Telephone(12, "Samsung wave 1", (float) 125.50, "0612538967", new Operateur("Bouigue"), new Marque("Samsung"));
-		client.add(new Client("Johston", "Waverly", tel));		// A SUPPRIMER !!!!!!!!! (et au dessus aussi)
-
 		panel = new JPanel();
 		panelMenu = new PanneauMenu(this);
 		panelAjtClnt = new PanneauAjoutClient(this);
