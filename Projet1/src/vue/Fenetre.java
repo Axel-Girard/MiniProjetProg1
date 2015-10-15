@@ -12,6 +12,10 @@ import controller.Marque;
 import controller.Operateur;
 import controller.Telephone;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 @SuppressWarnings("serial")
 public class Fenetre extends JFrame{
 

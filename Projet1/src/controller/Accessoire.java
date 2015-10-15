@@ -1,6 +1,10 @@
 package controller;
 import java.util.HashSet;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 public abstract class Accessoire extends Article{
 	protected  HashSet<Marque> marque;
 	public Accessoire(int ref, String intitule, float prix){

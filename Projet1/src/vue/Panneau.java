@@ -3,6 +3,10 @@ package vue;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 @SuppressWarnings("serial")
 public abstract class Panneau extends JPanel{
 	protected JLabel lbl;

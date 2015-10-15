@@ -10,6 +10,10 @@ import javax.swing.JRadioButton;
 
 import controller.Client;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 @SuppressWarnings("serial")
 public abstract class PanneauSelectionUnique extends PanneauSelection{
 	protected ButtonGroup bg;

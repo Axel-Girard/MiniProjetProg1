@@ -8,6 +8,10 @@ import java.util.ArrayList;
 
 import javax.swing.JCheckBox;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 @SuppressWarnings("serial")
 public abstract class PanneauSelectionMultiple extends PanneauSelection{
 	protected ArrayList<JCheckBox> arrayCompo;

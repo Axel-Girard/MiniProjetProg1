@@ -5,6 +5,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 @SuppressWarnings("serial")
 public class BouttonQuitter extends JButton implements ActionListener{
 

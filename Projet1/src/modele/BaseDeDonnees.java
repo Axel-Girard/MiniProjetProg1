@@ -11,6 +11,10 @@ import controller.Marque;
 import controller.Telephone;
 import controller.Type;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 public class BaseDeDonnees {
 	private static BaseDeDonnees instance = null;
 

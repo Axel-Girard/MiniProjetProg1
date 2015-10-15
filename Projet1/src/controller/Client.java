@@ -1,5 +1,9 @@
 package controller;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 public class Client {
 	private ListeArticles liste;
 	private String nom;

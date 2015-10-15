@@ -5,6 +5,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 public class ListeArticles {
 	private ArticleCompareRef compareRef;
 	private ArticleCompareIntitule compareInt;

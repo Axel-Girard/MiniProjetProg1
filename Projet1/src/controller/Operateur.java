@@ -1,5 +1,9 @@
 package controller;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 public class Operateur {
 	private String nom;
 

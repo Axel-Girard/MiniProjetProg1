@@ -1,5 +1,9 @@
 package controller;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 public abstract class Article {
 	protected int ref;
 	protected String intitule;

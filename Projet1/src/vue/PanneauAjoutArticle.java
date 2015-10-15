@@ -10,6 +10,10 @@ import modele.BaseDeDonnees;
 import controller.Accessoire;
 import controller.Client;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 @SuppressWarnings("serial")
 public class PanneauAjoutArticle extends PanneauSelectionMultiClient{
 	private BaseDeDonnees bdd;

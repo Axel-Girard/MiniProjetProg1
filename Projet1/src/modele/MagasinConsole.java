@@ -7,21 +7,21 @@ import controller.Cordon;
 import controller.ListeArticles;
 import controller.Type;
 
+
 /**
  * @authors Ludovic CHEVRAUX & Axel GIRARD
  * 
  */
-public class Magasin {
-	private static Vendeur vendeur;
+public class MagasinConsole {
 
-	// main de l'application
+	/**
+	 * Lance le projet en console.
+	 * Le projet répond à chaque question du sujet les une après les autres.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		System.out.println("Welcome in the magasin of the future of demain !");
-		vendeur = new Vendeur();
-	}
 
-	// methodes
-	public static void testBasique(){
 		ListeArticles liste = new ListeArticles();
 
 		Article a1 = new Coque(001,"coc01",(float)5.4,"Rouge");
@@ -45,19 +45,5 @@ public class Magasin {
 		liste.tousLesArticles_ParIntitule(false);
 
 		liste.sauvegarde();
-	}
-
-	// Accesseurs
-	/**
-	 * @return the vendeur
-	 */
-	public static Vendeur getVendeur() {
-		return vendeur;
-	}
-	/**
-	 * @param vendeur the vendeur to set
-	 */
-	public static void setVendeur(Vendeur vendeur) {
-		Magasin.vendeur = vendeur;
 	}
 }

@@ -1,5 +1,9 @@
 package vue;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 @SuppressWarnings("serial")
 public class PanneauEditerClient extends PanneauSelectionUnique{
 	private int cptClient;

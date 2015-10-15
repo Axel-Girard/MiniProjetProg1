@@ -6,6 +6,10 @@ import vue.Fenetre;
 import controller.Client;
 import controller.Telephone;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 public class Vendeur {
 	private ArrayList<Client> clients;
 

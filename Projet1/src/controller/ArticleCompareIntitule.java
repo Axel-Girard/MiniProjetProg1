@@ -1,6 +1,10 @@
 package controller;
 import java.util.Comparator;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 public class ArticleCompareIntitule implements Comparator<Article> {
 
 	public int compare(Article obj1, Article obj2) {

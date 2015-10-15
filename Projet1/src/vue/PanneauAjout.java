@@ -14,6 +14,10 @@ import javax.swing.JScrollPane;
 
 import controller.Client;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 @SuppressWarnings("serial")
 public abstract class PanneauAjout extends Panneau{
 	protected JScrollPane scroll;

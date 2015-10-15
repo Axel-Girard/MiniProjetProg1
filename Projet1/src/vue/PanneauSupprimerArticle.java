@@ -8,6 +8,10 @@ import javax.swing.JRadioButton;
 import controller.Article;
 import controller.Client;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 @SuppressWarnings("serial")
 public class PanneauSupprimerArticle extends PanneauSelectionUnique{
 	private Client cli;

@@ -4,6 +4,10 @@ import javax.swing.JCheckBox;
 
 import controller.Client;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 @SuppressWarnings("serial")
 public abstract class PanneauSelectionMultiClient extends PanneauSelectionMultiple{
 

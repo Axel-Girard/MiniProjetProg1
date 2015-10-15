@@ -5,6 +5,10 @@ import javax.swing.JLabel;
 import controller.Client;
 import controller.ListeArticles;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 @SuppressWarnings("serial")
 public class PanneauPayement extends PanneauSelectionUnique{
 	private float client;

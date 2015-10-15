@@ -1,5 +1,9 @@
 package controller;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 public class Chargeur extends Accessoire {
 	private Type type;
 

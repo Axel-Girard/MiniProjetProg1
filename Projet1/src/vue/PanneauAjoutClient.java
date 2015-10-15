@@ -12,6 +12,10 @@ import controller.Client;
 import controller.Marque;
 import controller.Telephone;
 
+/**
+ * @authors Ludovic CHEVRAUX & Axel GIRARD
+ * 
+ */
 @SuppressWarnings("serial")
 public class PanneauAjoutClient extends PanneauAjout{
 	private JLabel lblClient;
@@ -223,6 +227,7 @@ public class PanneauAjoutClient extends PanneauAjout{
 	 * @param creer si vrai créer un utilisateur sinon l'édite
 	 */
 	public void test(boolean creer){
+		initialiserChamps();
 		if(jtfNom.getText().length() != 0){
 			if(jtfPrenom.getText().length() != 0){
 				if(jtfRef.getText().length() != 0 && isNumeric(jtfRef.getText())){
