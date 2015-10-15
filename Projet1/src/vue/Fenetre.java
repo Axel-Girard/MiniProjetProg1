@@ -9,9 +9,6 @@ import javax.swing.JPanel;
 
 import modele.Vendeur;
 import controller.Client;
-import controller.Marque;
-import controller.Operateur;
-import controller.Telephone;
 
 /**
  * @authors Ludovic CHEVRAUX & Axel GIRARD
